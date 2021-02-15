@@ -1,0 +1,28 @@
+.post-page {
+    border: 1px solid black;
+    margin: 50px;
+    padding: 15px;
+}
+
+.post-content {
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px;
+}
+
+.post-comments {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 15px;
+}
+
+.separated-comment {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 15px;
+}
+.create-post {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 15px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/post.css" />
+    <title>post page</title>
+  </head>
+  <body>
+    <div class="post-page">
+      <div class="post-content">
+        <!-- user id, user avatar, post content -->
+        <h4 id="111" class="post-title">Post title here</h4>
+        <p class="post-text">post content here blahh blaahh</p>
+        <p class="post-author">Posted by @Bsdsd in r/adssdsd</p>
+        <img src="datafrom sdsd" alt="sdsd">
+        <button type="button">Upvote</button>
+        <button type="button">Downvote</button>
+        <button type="button" onclick="reportDetails()">Report post</button>
+        <!-- if post author this button shows up -->
+        <button type="button" onclick="confirmDelete()">Delete post</button>
+        <!-- if user is logged in -->
+        <div class="user-comment">
+          <p>Comment as user</p>
+          <form class="comment" action="" method="post">
+            <textarea id="comment-id" name="comment" placeholder="what are your thought"></textarea>
+            <input type="submit" onclick="comment()" value="Comment">
+          </form>
+
+        </div>
+      </div>
+      <div class="post-comments">
+        <div class="separated-comment">
+          <p class="comment-author">@asdsadas</p>
+          <p class="comment-text">post comment here blahh blaahh</p>
+          <button type="button">Upvote</button>
+          <button type="button">Downvote</button>
+          <button type="button" onclick="reportDetails()" >Report comment</button>
+        </div>
+        <div  class="separated-comment">
+          <p class="comment-author">@asdsadsas</p>
+          <p class="comment-text">post comment here blahh blaahh</p>
+          <button type="button">Upvote</button>
+          <button type="button">Downvote</button>
+          <button type="button">Report comment</button>
+
+        </div>
+        <div  class="separated-comment">
+          <p class="comment-author">@asdsadas</p>
+          <p class="comment-text">post comment here blahh blaahh</p>
+          <button type="button">Upvote</button>
+          <button type="button">Downvote</button>
+          <button type="button">Report comment</button>
+
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function confirmDelete(){
+        window.confirm("are you sure you want to delete this?");
+      }
+      function reportDetails(){
+        window.prompt("please state why this post/comment is inappropriate?")
+      }
+      function comment()
+      {
+        windows.alert(document.getElementById("comment-id").value);
+      }
+    </script>
+  </body>
+</html>
