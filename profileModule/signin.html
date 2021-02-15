@@ -12,34 +12,107 @@
             <img src="contoh2.png" alt="website type" style="width:9em;">
         </div>
     </div>
-
-    <div class="loginbox">
-        <h1>Welcome to OPnion</h1>
-
-        <form action="/action_page.php" method="post">
-            <div class="clearfix">
-                <div class="box" >
-                    <h3>Log in</h3>
+<div class="row">
+    <div class="column left2">
+        <div class="loginbox">
+            <h1 style="text-align:center;">Welcome to OPnion</h1>
+            <form action="/action_page.php" method="post">
+                <div class="clearfix">
+                    <div class="box" >
+                        <h3>Log in</h3>
+                    </div>
+                    <div class="box" >
+                        <h3><a href="/signup" style="color: rgb(153, 153, 153);text-decoration: none;">Sign up</a></h3>
+                    </div>
                 </div>
-                <div class="box" >
-                    <h3><a href="/signup" style="color: rgb(153, 153, 153);text-decoration: none;">Sign up</a></h3>
+            <hr class="login"style="margin: 0px; width:50%;">
+            <hr class="login1"style="margin: 0px; width:50%;">
+            <br>
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <br>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                    <button type="submit">Login</button>
                 </div>
+            </form>
+    
+        </div>
+    </div>
+
+    <div class="column right2">
+        
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="blog1.jpg" style="width:100%">
+              <div class="text">Forum and Discussion</div>
             </div>
-        <hr class="login"style="margin: 0px; width:50%;">
-        <hr class="login1"style="margin: 0px; width:50%;">
-        <br>
-            <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-                <br>
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                
-                <button type="submit">Login</button>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="blog2.jpg" style="width:100%">
+              <div class="text">Caption Two</div>
             </div>
-        </form>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="blog1.jpg" style="width:100%">
+              <div class="text">Caption Three</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+            
+            <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
 
     </div>
+</div>
+      
+
+
+
+
+    
 
 
 
