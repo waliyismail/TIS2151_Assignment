@@ -29,21 +29,43 @@
 <div class="row">
     <div class="column left3" style="background-color:white;">
         <h2>Update Profile</h2>
-        <div class="container">
-                    <label for="uname"><b>User ID</b></label><br>
+        <form action="/action_page.php" method="post">
+            <div class="container">
+                    <label for="userid"><b>New User ID</b></label><br>
                     <input style="width:30em;" type="text" placeholder="Enter User ID" name="userid" required>
                     <br>
-                    <label for="psw"><b>Password</b></label><br>
+
+                    <label for="pass"><b>New Password</b></label><br>
                     <input style="width:30em;" type="password" placeholder="Enter Password" name="pass" required>
                     <br>
-                    <label for="uname"><b>Username</b></label><br>
+
+                    <label for="username"><b>New Username</b></label><br>
                     <input style="width:30em;" type="text" placeholder="Enter Username" name="username" required>
                     <br>
-                    <label for="uname"><b>Email</b></label><br>
+
+                    <label for="email"><b>New Email</b></label><br>
                     <input style="width:30em;" type="email" placeholder="Enter Email" name="email" required>
                     <br>
+
+                    <label for="fullname"><b>Full Name</b></label><br>
+                    <input style="width:30em;" type="text" placeholder="Enter Fullname" name="fullname" required>
+                    <br>
+
+                    <label for="hometown"><b>Hometown</b></label><br>
+                    <input style="width:30em;" type="hometown" placeholder="Enter hometown" name="hometown" required>
+                    <br>
+
+                    <label for="hometown"><b>Select a profile picture:</b></label><br>
+                    <input type="file" id="myFile" size="50">
+                    <br>
+                    
+                    <label for="about"><b>About</b></label><br>
+                    <textarea>About...</textarea>
                     <button type="submit"style="width:13em;">Update Profile</button>
-                </div>
+                    
+                    
+            </div>
+        </form>
     </div>
     <div class="column right3">
         <img src="/public/profilepic.png" alt="profile picture" style="width:12em;margin-left:19.5%;">

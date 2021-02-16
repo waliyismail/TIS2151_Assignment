@@ -27,8 +27,36 @@
 
 
 <div class="row">
-    <div class="column left3" style="background-color:grey;">
-        hello
+    <div class="column left3">
+    <h2>Update Profile</h2>
+        <div class="boxborder">
+            <table>
+                <tr>
+                    <th>User Id</th>
+                    <td>@HazwaniSalleh</td>
+                </tr>
+                <tr>
+                    <th>Username</th>
+                    <td>HazwaniSalleh</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>hazwanmsalleh@gmail.com</td>
+                </tr>
+                <tr>
+                    <th>Full Name</th>
+                    <td>Nurhazwani Mat Salleh</td>
+                </tr>
+                <tr>
+                    <th>Hometown</th>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <th>About</th>
+                    <td>24 years old, love blogging.</td>
+                </tr>
+            </table>
+        </div>  
     </div>
     <div class="column right3">
         <img src="/public/profilepic.png" alt="profile picture" style="width:12em;margin-left:19.5%;">
