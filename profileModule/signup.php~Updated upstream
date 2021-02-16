@@ -30,13 +30,13 @@
             <br>
                 <div class="container">
                     <label for="uname"><b>User ID</b></label>
-                    <input type="text" placeholder="Enter User ID" name="uID" required>
+                    <input type="text" placeholder="Enter User ID" name="userid" required>
                     <br>
                     <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <input type="password" placeholder="Enter Password" name="pass" required>
                     <br>
                     <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <input type="text" placeholder="Enter Username" name="username" required>
                     <br>
                     <label for="uname"><b>Email</b></label>
                     <input type="email" placeholder="Enter Email" name="email" required>

@@ -34,10 +34,10 @@
             <br>
                 <div class="container">
                     <label for="uname"><b>User ID</b></label>
-                    <input type="text" placeholder="Enter User ID" name="uID" required>
+                    <input type="text" placeholder="Enter User ID" name="userid" required>
                     <br>
                     <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <input type="password" placeholder="Enter Password" name="pass" required>
                     
                     <button type="submit">Login</button>
                 </div>
