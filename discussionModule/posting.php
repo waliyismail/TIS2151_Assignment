@@ -1,3 +1,7 @@
+<!-- TODO
+      1) user session id to be passed
+      2) css
+      3) forum id to be passed -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,25 +10,31 @@
     <title>Create a post</title>
   </head>
   <body>
-    <?php if (isset($_POST['submit_post']))
-      echo 'Your OPnion has been posted'
-      $sql = "INSERT INTO POST (post_title, post_content, post_image, user_forum_id)
-      values ($_POST['post_title'],$_POST['post_content'], $_POST['post_image'], $_POST['user_forum_id']);
-      $res = mysqli_query($conn, $sql);
-
-    ?>
-
-    <<?php else ?>
+    <?php
+    include "conn.php";
+    // add post content to database
+    if (isset($_POST['submit_post'])){
+      $title = $_POST["post_title"];
+      $content = $_POST['post_content'];
+      $image = $_POST['post_image'];
+      $userid =  $_POST['user_forum_id'];
+      $forumid= $_POST['forum_id'];
+      $sql = "INSERT INTO POST(post_title, post_content, post_image, user_forum_id, forum_id) values ('$title', '$content', '$image', '$userid', '$forumid')";
+      $result = mysqli_query($conn, $sql);
+      if(!$result) {echo mysqli_error($conn);}
+      else {echo "<script> window.alert('Your OPnion Has Been Posted!!!')</script>";}
+      }?>
+      <?php $USER_FORUM_ID = 'mrsstyle'; $FORUM_ID = 1;
+       // user id and forum id should be passed from the previos page ?>
     <h4>Create a post</h4>
-    <form class="create-post" action="action.php" method="post">
+    <form class="create-post" action="posting.php" method="post">
       <!-- include post in database -->
       <textarea name="post_title" placeholder="Title" maxlength="300"></textarea><br>
       <textarea name="post_content" rows="5" cols="40"placeholder="Whats your OPnion?"></textarea><br>
       <input type="file" name="post_image">
-      <input type="hidden" name=<?php echo $USER_FORUM_ID?>>
-
+      <input type="hidden" name="user_forum_id" value=<?php echo $USER_FORUM_ID;?>>
+      <input type="hidden" name="forum_id" value=<?php echo $FORUM_ID;?>>
       <input type="submit" name="submit_post" value="Post">
     </form>
-  <?php endif; ?>
   </body>
 </html>
