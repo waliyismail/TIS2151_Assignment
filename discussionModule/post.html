@@ -9,6 +9,7 @@
     <div class="post-page">
       <div class="post-content">
         <!-- user id, user avatar, post content -->
+        <!-- get post by id then display here -->
         <h4 id="111" class="post-title">Post title here</h4>
         <p class="post-text">post content here blahh blaahh</p>
         <p class="post-author">Posted by @Bsdsd in r/adssdsd</p>
@@ -18,10 +19,11 @@
         <button type="button" onclick="reportDetails()">Report post</button>
         <!-- if post author this button shows up -->
         <button type="button" onclick="confirmDelete()">Delete post</button>
-        <!-- if user is logged in -->
+        <!-- if user is logged in  and user != post author-->
         <div class="user-comment">
           <p>Comment as user</p>
-          <form class="comment" action="" method="post">
+          <form class="comment" action="comment.php" method="post">
+            <!-- add comment to database -->
             <textarea id="comment-id" name="comment" placeholder="what are your thought"></textarea>
             <input type="submit" onclick="comment()" value="Comment">
           </form>
@@ -29,6 +31,7 @@
         </div>
       </div>
       <div class="post-comments">
+        <!-- get all the comments from database loop and display here -->
         <div class="separated-comment">
           <p class="comment-author">@asdsadas</p>
           <p class="comment-text">post comment here blahh blaahh</p>
@@ -57,13 +60,11 @@
     <script type="text/javascript">
       function confirmDelete(){
         window.confirm("are you sure you want to delete this?");
+        // if yes -> remove from database
       }
       function reportDetails(){
         window.prompt("please state why this post/comment is inappropriate?")
-      }
-      function comment()
-      {
-        windows.alert(document.getElementById("comment-id").value);
+        // add to database
       }
     </script>
   </body>
