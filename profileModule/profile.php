@@ -16,8 +16,8 @@
 <div class="behind">
     <div class="navbar">
         <ul>
-            <li><a href="#Home">Home</a></li>
-            <li><a class="active" >Profile</a></li>
+            <li><a href="/feedModule/home.php">Home</a></li>
+            <li><a class="active">Profile</a></li>
             
             <li style="float:right"><a href="#contact">Log Out</a></li>
       
@@ -67,7 +67,7 @@
             <li class="liactive">Profile</li>
             <li class="liprof"><a href="updateprofile.php">Update</a></li>
             <li class="liprof"><a href="viewPost.php">Post</a></li>
-            <li class="liprof"><a href="#upvote">Upvote</a></li>
+            <li class="liprof"><a href="upVote.php">Upvote</a></li>
             
         </ul>
         
