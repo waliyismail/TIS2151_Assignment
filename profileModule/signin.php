@@ -14,19 +14,19 @@
     </div>
 <div class="row">
     <div class="column left2">
-        <div class="signupbox">
+        <div class="loginbox">
             <h1 style="text-align:center;">Welcome to OPnion</h1>
             <form action="/action_page.php" method="post">
                 <div class="clearfix">
                     <div class="box" >
-                        <h3><a href="signin.html" style="color: rgb(153, 153, 153);text-decoration: none;">Log in</a></h3>
+                        <h3>Log in</h3>
                     </div>
                     <div class="box" >
-                        <h3>Sign up</h3>
+                        <h3><a href="signup.html" style="color: rgb(153, 153, 153);text-decoration: none;">Sign up</a></h3>
                     </div>
                 </div>
-            <hr class="login1"style="margin: 0px; width:50%;">
             <hr class="login"style="margin: 0px; width:50%;">
+            <hr class="login1"style="margin: 0px; width:50%;">
             <br>
                 <div class="container">
                     <label for="uname"><b>User ID</b></label>
@@ -34,14 +34,8 @@
                     <br>
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required>
-                    <br>
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
-                    <br>
-                    <label for="uname"><b>Email</b></label>
-                    <input type="email" placeholder="Enter Email" name="email" required>
-                    <br>
-                    <button type="submit">Signup</button>
+                    
+                    <button type="submit">Login</button>
                 </div>
             </form>
     
@@ -113,21 +107,10 @@
 
     </div>
 </div>
-      
-
-
-
-
-    
-
-
-
-
-
-
-
-</body>
 <footer>
 
 </footer>
+ 
+</body>
+
 </html>
