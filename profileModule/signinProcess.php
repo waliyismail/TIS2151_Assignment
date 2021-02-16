@@ -4,7 +4,7 @@ if(isset($_POST['save']))
 {
     extract($_POST);
     include 'database.php';
-    $sql=mysqli_query($conn,"SELECT * FROM register where Email='$userid' and Password='md5($pass)'");
+    $sql=mysqli_query($conn,"SELECT * FROM USER_FORUM where USER_FORUM_ID='$userid' and USER_FORUM_PASSWORD='md5($pass)'");
     $row  = mysqli_fetch_array($sql);
     if(is_array($row))
     {

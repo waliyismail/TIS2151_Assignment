@@ -1,7 +1,7 @@
 <?php
 extract($_POST);
 include("database.php");
-$sql=mysqli_query($conn,"SELECT * FROM USER_FORUM where Email='$email'");
+$sql=mysqli_query($conn,"SELECT * FROM USER_FORUM where USER_FORUM_EMAIL='$email'");
 if(mysqli_num_rows($sql)>0)
 {
     echo "Email Id Already Exists"; 
