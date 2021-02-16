@@ -19,7 +19,7 @@
             <form action="/action_page.php" method="post">
                 <div class="clearfix">
                     <div class="box" >
-                        <h3><a href="signin.html" style="color: rgb(153, 153, 153);text-decoration: none;">Log in</a></h3>
+                        <h3><a href="signin.php" style="color: rgb(153, 153, 153);text-decoration: none;">Log in</a></h3>
                     </div>
                     <div class="box" >
                         <h3>Sign up</h3>
@@ -113,9 +113,10 @@
 
     </div>
 </div>
-<footer>
-
-</footer>
+<div class = "loginbox" style="height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
+Copyright OPnion. All rights reserved   <br> 
+@2021 Online Generated Content Web Forum System
+</div>
 
 </body>
 

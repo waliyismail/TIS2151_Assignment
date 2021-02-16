@@ -12,17 +12,21 @@
             <img src="/public/contoh2.png" alt="website type" style="width:9em;">
         </div>
     </div>
+
 <div class="row">
+
     <div class="column left2">
+
         <div class="loginbox">
             <h1 style="text-align:center;">Welcome to OPnion</h1>
+
             <form action="/action_page.php" method="post">
                 <div class="clearfix">
                     <div class="box" >
                         <h3>Log in</h3>
                     </div>
                     <div class="box" >
-                        <h3><a href="signup.html" style="color: rgb(153, 153, 153);text-decoration: none;">Sign up</a></h3>
+                        <h3><a href="signup.php" style="color: rgb(153, 153, 153);text-decoration: none;">Sign up</a></h3>
                     </div>
                 </div>
             <hr class="login"style="margin: 0px; width:50%;">
@@ -67,7 +71,7 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
             
-            </div>
+        </div>
             <br>
             
             <div style="text-align:center">
@@ -107,9 +111,11 @@
 
     </div>
 </div>
-<footer>
 
-</footer>
+<div class = "loginbox" style="margin-top:10em;height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
+Copyright OPnion. All rights reserved  <br>
+@2021 Online Generated Content Web Forum System
+</div>
  
 </body>
 
