@@ -16,7 +16,7 @@
     <div class="column left2">
         <div class="signupbox">
             <h1 style="text-align:center;">Welcome to OPnion</h1>
-            <form action="/action_page.php" method="post">
+            <form action="signupProcess.php" method="post">
                 <div class="clearfix">
                     <div class="box" >
                         <h3><a href="signin.php" style="color: rgb(153, 153, 153);text-decoration: none;">Log in</a></h3>

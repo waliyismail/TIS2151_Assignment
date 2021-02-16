@@ -20,7 +20,7 @@
         <div class="loginbox">
             <h1 style="text-align:center;">Welcome to OPnion</h1>
 
-            <form action="/action_page.php" method="post">
+            <form action="signinProcess.php" method="post">
                 <div class="clearfix">
                     <div class="box" >
                         <h3>Log in</h3>
