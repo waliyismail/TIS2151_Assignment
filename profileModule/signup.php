@@ -16,10 +16,10 @@
     <div class="column left2">
         <div class="signupbox">
             <h1 style="text-align:center;">Welcome to OPnion</h1>
-            <form action="/action_page.php" method="post">
+            <form action="signupProcess.php" method="post">
                 <div class="clearfix">
                     <div class="box" >
-                        <h3><a href="signin.html" style="color: rgb(153, 153, 153);text-decoration: none;">Log in</a></h3>
+                        <h3><a href="signin.php" style="color: rgb(153, 153, 153);text-decoration: none;">Log in</a></h3>
                     </div>
                     <div class="box" >
                         <h3>Sign up</h3>
@@ -28,20 +28,20 @@
             <hr class="login1"style="margin: 0px; width:50%;">
             <hr class="login"style="margin: 0px; width:50%;">
             <br>
-                <div class="container">
+            <div class="container">
                     <label for="uname"><b>User ID</b></label>
-                    <input type="text" placeholder="Enter User ID" name="uID" required>
+                    <input type="text" placeholder="Enter User ID" name="userid" required>
                     <br>
                     <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <input type="password" placeholder="Enter Password" name="pass" required>
                     <br>
                     <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <input type="text" placeholder="Enter Username" name="username" required>
                     <br>
                     <label for="uname"><b>Email</b></label>
                     <input type="email" placeholder="Enter Email" name="email" required>
                     <br>
-                    <button type="submit">Signup</button>
+                    <button type="submit" name="save">Signup</button>
                 </div>
             </form>
     
@@ -113,9 +113,10 @@
 
     </div>
 </div>
-<footer>
-
-</footer>
+<div class = "loginbox" style="height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
+Copyright OPnion. All rights reserved   <br> 
+@2021 Online Generated Content Web Forum System
+</div>
 
 </body>
 
