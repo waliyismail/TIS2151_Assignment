@@ -114,7 +114,8 @@
 
 <div class = "loginbox" style="margin-top:10em;height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
 Copyright OPnion. All rights reserved  <br>
-@2021 Online Generated Content Web Forum System
+@2021 Online Generated Content Web Forum System 
+<a href="/adminModule/admin.php" style="color:white;">Admin</a>
 </div>
  
 </body>

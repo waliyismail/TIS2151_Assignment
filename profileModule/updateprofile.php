@@ -20,7 +20,7 @@
             <li><a class="active" >Profile</a></li>
             
             <li style="float:right"><a href="#contact">Log Out</a></li>
-            <li style="float:right"><a href="#contact">Help Center</a></li>
+        
         </ul>
     </div>
 </div>
@@ -75,9 +75,8 @@
         <ul class="ulprof">
             <li class="liprof"><a href="profile.php">Profile</a></li>
             <li class="liactive">Update</li>
-            <li class="liprof"><a href="posts">Post</a></li>
-            <li class="liprof"><a href="#comment">Comment</a></li>
-            <li class="liprof"><a href="#upvote">Upvote</a></li>
+            <li class="liprof"><a href="viewPost.php">Post</a></li>
+            <li class="liprof"><a href="upVote.php">Upvote</a></li>
         </ul>
         
     </div>

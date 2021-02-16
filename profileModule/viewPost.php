@@ -20,7 +20,7 @@
             <li><a class="active" >Profile</a></li>
             
             <li style="float:right"><a href="#contact">Log Out</a></li>
-      
+          
         </ul>
     </div>
 </div>
@@ -28,34 +28,9 @@
 
 <div class="row">
     <div class="column left3">
-    <h2>Your Profile</h2>
+    <h2>Your Post</h2>
         <div class="boxborder">
-            <table>
-                <tr>
-                    <th>User Id</th>
-                    <td>@HazwaniSalleh</td>
-                </tr>
-                <tr>
-                    <th>Username</th>
-                    <td>HazwaniSalleh</td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td>hazwanmsalleh@gmail.com</td>
-                </tr>
-                <tr>
-                    <th>Full Name</th>
-                    <td>Nurhazwani Mat Salleh</td>
-                </tr>
-                <tr>
-                    <th>Hometown</th>
-                    <td>Malaysia</td>
-                </tr>
-                <tr>
-                    <th>About</th>
-                    <td>24 years old, love blogging.</td>
-                </tr>
-            </table>
+            
         </div>  
     </div>
     <div class="column right3">
@@ -64,10 +39,10 @@
         <p style="margin-top:-1em;text-align:center;">@HazwaniSalleh </p>
        
         <ul class="ulprof">
-            <li class="liactive">Profile</li>
+            <li class="liprof"><a href="profile.php">Profile</a></li>
             <li class="liprof"><a href="updateprofile.php">Update</a></li>
-            <li class="liprof"><a href="viewPost.php">Post</a></li>
-            <li class="liprof"><a href="#upvote">Upvote</a></li>
+            <li class="liactive">Post</li>
+            <li class="liprof"><a href="upVote.php">Upvote</a></li>
             
         </ul>
         
