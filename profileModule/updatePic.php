@@ -1,10 +1,8 @@
+<!DOCTYPE html>
 
 <?php 
     include('signinProcess.php');
 ?>
-
-<!DOCTYPE html>
-
 
 <html>
 <head>
@@ -24,105 +22,31 @@
     <div class="navbar">
         <ul>
             <li><a href="/feedModule/home.php">Home</a></li>
-            <li><a class="active">Profile</a></li>
+            <li><a class="active" >Profile</a></li>
             
             <li style="float:right"><a href="/logout.php">Log Out</a></li>
-      
+        
         </ul>
     </div>
 </div>
 
 
 <div class="row">
-    <div class="column left3">
-    <h2>Your Profile</h2>
-        <div class="boxborder">
-            <table>
-                <tr>
-                    <th>User Id </th>
-                    <td>        
-                    <?php 
-        
-                     include 'database.php';
-                     $id = $_SESSION['ID'] ;
+    <div class="column left3" style="background-color:white;">
+        <h2>Update Picture</h2>
+            
 
-                    $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
+        <form action="updateProfileProcess.php" method="post" enctype="multipart/form-data">
+            <div class="container">
+                    <input type="file" name="file" />
+                    <br>
 
-        $result = mysqli_query($conn,$sql);
-        
-        while($row = mysqli_fetch_assoc($result)) {
-            echo $row["USER_FORUM_ID"];
-          }
-        
-        
-        
-        ?></td>
-                </tr>
-                <tr>
-                    <th>Username</th>
-                    <td>        <?php 
-        
-        include 'database.php';
-        $id = $_SESSION['ID'] ;
-
-        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
-
-        $result = mysqli_query($conn,$sql);
-        
-        while($row = mysqli_fetch_assoc($result)) {
-            echo $row["USER_FORUM_NAME"];
-          }
-         
-        
-        
-        
-        ?></td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td>        <?php 
-        
-        include 'database.php';
-        $id = $_SESSION['ID'] ;
-
-        $sql = "SELECT USER_FORUM_EMAIL FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
-
-        $result = mysqli_query($conn,$sql);
-        
-        while($row = mysqli_fetch_assoc($result)) {
-            echo $row["USER_FORUM_EMAIL"];
-          }
-        ; 
-        
-        
-        
-        ?></td>
-                </tr>
-                <tr>
-                    <th>About</th>
-                    <td><?php 
-        
-        include 'database.php';
-        $id = $_SESSION['ID'] ;
-
-        $sql = "SELECT USER_FORUM_ABOUT FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
-
-        $result = mysqli_query($conn,$sql);
-        
-        while($row = mysqli_fetch_assoc($result)) {
-            echo $row["USER_FORUM_ABOUT"];
-          }
-        
-        
-        
-        
-        ?></td>      
-                </tr>
-            </table>
-        </div>  
+                    <input type="submit"style="width:13em;" value='Select Profile Picture' name = but_upload>
+            </div>
+        </form>
     </div>
     <div class="column right3">
-        <img src=       <?php 
+        <img src=         <?php 
         
         include 'database.php';
         $id = $_SESSION['ID'] ;
@@ -180,11 +104,11 @@
         ?> </p>
        
        <ul class="ulprof">
-            <li class="liactive">Profile</li>
+            <li class="liprof"><a href="profile.php">Profile</a></li>
             <li class="liprof"><a href="updateprofile.php">Update Profile</a></li>
-            <li class="liprof"><a href="updatePic.php">Edit Picture</a></li>
+            <li class="liactive">Edit Picture</a></li>
             <li class="liprof"><a href="viewPost.php">Post</a></li>
-            <li class="liprof"><a href="viewPost.php">Upvote</a></li>
+            <li class="liprof"><a href="upVote.php">Upvote</a></li>
         </ul>
         
     </div>

@@ -48,7 +48,7 @@
                 echo "<tr>";
                 echo "<td>" . $count . "</td>";
                 echo "<td>" . $row['USER_FORUM_ID'] . "</td>";
-                echo "<td><button class=\"buttonDelete\">DELETE</button></td>";
+                echo "<td></td>";
                 echo "</tr>";
                 $count++;
             }

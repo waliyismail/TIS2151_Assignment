@@ -11,8 +11,8 @@
     {
         extract($_POST);
         $id = $_SESSION["ID"];
-        if(!($username == NULL)){
-            $sql=mysqli_query($conn,"UPDATE USER_FORUM SET USER_FORUM_NAME='$username' WHERE USER_FORUM_ID = '$id'");
+        if(!($user_name == NULL)){
+            $sql=mysqli_query($conn,"UPDATE USER_FORUM SET USER_FORUM_NAME='$user_name' WHERE USER_FORUM_ID = '$id'");
         }
 
         if(!($email == NULL))
@@ -21,7 +21,7 @@
         }
         if(!($about == NULL))
         {
-            $sql=mysqli_query($conn,"UPDATE USER_FORUM SET USER_FORUM_EMAIL='$about' WHERE USER_FORUM_ID = '$id'");
+            $sql=mysqli_query($conn,"UPDATE USER_FORUM SET USER_FORUM_ABOUT='$about' WHERE USER_FORUM_ID = '$id'");
         }
           
             

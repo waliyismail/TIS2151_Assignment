@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+
+<?php 
+    include('signinProcess.php');
+?>
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -34,16 +39,68 @@
         </div>  
     </div>
     <div class="column right3">
-        <img src="/public/profilepic.png" alt="profile picture" style="width:12em;margin-left:19.5%;">
-        <h2 style="margin-top:0;text-align:center;">HazwaniSalleh </h2>
-        <p style="margin-top:-1em;text-align:center;">@HazwaniSalleh </p>
-       
+    <img src=         <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_IMAGE FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "images/";
+            echo $row["USER_FORUM_IMAGE"];
+          }
+        
+        
+        
+        
+        ?>
+        
+        alt="profile picture" style="width:12em;margin-left:19.5%;">
+        <h2 style="margin-top:0;text-align:center;">
+        <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_NAME"];
+          }
+        
+        
+        
+        
+        ?></h2>
+        <p style="margin-top:-1em;text-align:center;">@        
+        <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_ID"];
+          }
+        
+        
+        
+        
+        ?> </p>
         <ul class="ulprof">
             <li class="liprof"><a href="profile.php">Profile</a></li>
-            <li class="liprof"><a href="updateprofile.php">Update</a></li>
+            <li class="liprof"><a href="updateprofile.php">Update Profile</a></li>
+            <li class="liprof"><a href="updatePic.php">Edit Picture</a></li>
             <li class="liactive">Post</li>
             <li class="liprof"><a href="upVote.php">Upvote</a></li>
-            
         </ul>
         
     </div>

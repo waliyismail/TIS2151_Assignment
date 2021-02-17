@@ -88,12 +88,18 @@ body{
 }
 
 form {
-  border: 3px solid #f1f1f1;
+  
   background-color: white;
   color: black;
   width: 90%;
   margin:auto;
 }
+
+
+
+
+
+
 .boxborder{
   border: 3px solid #f1f1f1;
   background-color: white;
