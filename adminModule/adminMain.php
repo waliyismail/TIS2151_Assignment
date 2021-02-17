@@ -25,48 +25,61 @@
         </ul>
     </div>
 </div>
+<?php
+  include "createForum.php";
 
+?>
 
 <div class="row">
     <div class="column left3">
     <h2>Create Forum</h2>
     <div class="boxborder">
-        <form action="/action_page.php" method="post">
-            
+        <form action="adminMain.php" method="post">
+
                     <label for="forumid"><b>Forum Title</b></label><br>
-                    <input style="width:30em;" type="text" placeholder="Enter Forum Title" name="forumid" required>
+                    <input style="width:30em;" type="text" placeholder="Enter Forum Title" name="forum_name" required>
                     <br>
 
-                    
+
                     <label for="about"><b>Forum About</b></label><br>
-                    <textarea>About...</textarea>
-                    <button class="button"type="text"style="width:13em;">Create Forum</button>
-        </form> 
+                    <textarea name="forum_about" placeholder="About..."></textarea>
+                    <button class="button" type="submit" name="create_forum" style="width:13em;">Create Forum</button>
+        </form>
         </div>
     </div>
     <div class="column right3">
-        
+
         <h2 style="margin-top:0;text-align:center;">ADMIN</h2>
         <p style="margin-top:-1em;text-align:center;">@admin</p>
         <h3 style="text-align:center;">List of All Forum</h3>
+        <!-- get forum from database -->
+        <?php
+        $forum_list = getForum();
+        if(empty($forum_list)){
+          echo "<p> no forum yet.. </p>";
+        }else {        ?>
         <ul class="ulprof">
-            <li class="liprof"><a href="#">Politic</a></li>
-            <li class="liprof"><a href="#">Hardware</a></li>
-            <li class="liprof"><a href="#">Gaming</a></li>
-            <li class="liprof"><a href="#">Upvote</a></li>
+            <?php foreach ($forum_list as $forum) {
+                // echo var_dump($forum_list);
+                // echo "           "?>
+
+              <li class="liprof"><a href="#"><?php echo $forum["0"]; ?></a></li>
+            <?php } ?>
+
         </ul>
-       
-        
+      <?php } ?>
+
+
     </div>
 </div>
 
 
 
 <div class = "loginboxx" style="height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
-    Copyright OPnion. All rights reserved  
+    Copyright OPnion. All rights reserved
     @2021 Online Generated Content Web Forum System
 </div>
- 
+
 </body>
 
 </html>
