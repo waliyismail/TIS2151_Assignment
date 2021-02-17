@@ -11,6 +11,8 @@ if(isset($_POST['save']))
         $_SESSION["ID"] = $row['USER_FORUM_ID'];
         $_SESSION["USERNAME"]=$row['USER_FORUM_NAME'];
         $_SESSION["USER_EMAIL"]=$row['USER_FORUM_EMAIL'];
+        $_SESSION["USER_IMAGE"] = $row['USER_FORUM_IMAGE'];
+        $_SESSION["ABOUT"] = $row['USER_FORUM_ABOUT'];
         header("Location: profile.php"); 
     }
     else

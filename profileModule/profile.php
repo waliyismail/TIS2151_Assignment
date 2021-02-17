@@ -1,4 +1,11 @@
+
+<?php 
+    include('signinProcess.php');
+?>
+
 <!DOCTYPE html>
+
+
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -32,36 +39,124 @@
         <div class="boxborder">
             <table>
                 <tr>
-                    <th>User Id</th>
-                    <td>@HazwaniSalleh</td>
+                    <th>User Id </th>
+                    <td>        
+                    <?php 
+        
+                     include 'database.php';
+                     $id = $_SESSION['ID'] ;
+
+                    $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        echo $result; 
+        
+        
+        
+        ?></td>
                 </tr>
                 <tr>
                     <th>Username</th>
-                    <td>HazwaniSalleh</td>
+                    <td>        <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        echo $result; 
+        
+        
+        
+        ?></td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>hazwanmsalleh@gmail.com</td>
-                </tr>
-                <tr>
-                    <th>Full Name</th>
-                    <td>Nurhazwani Mat Salleh</td>
-                </tr>
-                <tr>
-                    <th>Hometown</th>
-                    <td>Malaysia</td>
+                    <td>        <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_EMAIL FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        echo $result; 
+        
+        
+        
+        ?></td>
                 </tr>
                 <tr>
                     <th>About</th>
-                    <td>24 years old, love blogging.</td>
+                    <td></td>        <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_ABOUT FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        echo $result; 
+        
+        
+        
+        ?></td>
                 </tr>
             </table>
         </div>  
     </div>
     <div class="column right3">
-        <img src="/public/profilepic.png" alt="profile picture" style="width:12em;margin-left:19.5%;">
-        <h2 style="margin-top:0;text-align:center;">HazwaniSalleh </h2>
-        <p style="margin-top:-1em;text-align:center;">@HazwaniSalleh </p>
+        <img src=         <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_IMAGE FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        echo $result; 
+        
+        
+        
+        ?>
+        
+        alt="profile picture" style="width:12em;margin-left:19.5%;">
+        <h2 style="margin-top:0;text-align:center;">
+        <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        echo $result; 
+        
+        
+        
+        ?></h2>
+        <p style="margin-top:-1em;text-align:center;">@        
+        <?php 
+        
+        include 'database.php';
+        $id = $_SESSION['ID'] ;
+
+        $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+
+        $result = mysqli_query($conn,$sql);
+        
+        echo $result; 
+        
+        
+        
+        ?> </p>
        
         <ul class="ulprof">
             <li class="liactive">Profile</li>
