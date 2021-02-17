@@ -9,7 +9,6 @@
   </head>
   <body>
     <input type="file" name="pic" accept="image/png, image/jpeg">
-    window.alert("sds");
 
   </body>
 </html>

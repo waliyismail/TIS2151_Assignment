@@ -16,9 +16,9 @@
 <div class="behind">
     <div class="navbar">
         <ul>
-            <li><a href="/feedModule/home.php">Home</a></li>
+            <li><a class="active">Home</a></li>
             <li><a href="/profileModule/profile.php">Profile</a></li>
-            <li style="float:right"><a href="/logout.php">Log Out</a></li>
+            <li style="float:right"><a href="#contact">Log Out</a></li>
 
         </ul>
     </div>
@@ -59,16 +59,13 @@
             <h4>Post as @<?php echo $currentuserid ?> in forum <?php echo $forum_name ?></h4>
             <form class="create-post" action="createPost.php" method="post">
               <!-- include post in database -->
-              <textarea name="post_title" placeholder="Title" maxlength="120"></textarea><br>
-              <textarea name="post_content" rows="5" cols="40"placeholder="Whats your OPnion?"></textarea><br>
-              <input type="file" name="post_image">
-              <input type="hidden" name="user_forum_id" value=<?php echo $currentuserid;?>>
-              <input type="hidden" name="forum_id" value=<?php echo $FORUM_ID;?>>
-              <input type="submit" name="submit_post" value="Post">
+              <textarea id="text-title" name="post_title" placeholder="Title" maxlength="120"></textarea><br>
+              <textarea name="post_content" rows="5" cols="40"placeholder="What's your OPnion?"></textarea><br>
+              <input class="btn" type="file" name="post_image">
+              <input type="hidden" name="user_forum_id" value="<?php echo $currentuserid;?>">
+              <input type="hidden" name="forum_id" value="<?php echo $FORUM_ID;?>">
+              <button class="btn" type="submit" name="submit_post">Post</button>
             </form>
-
-
-
 
         </div>
     </div>
