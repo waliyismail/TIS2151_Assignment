@@ -1,3 +1,9 @@
+
+<?php 
+    include('signinProcess.php');
+?>
+
+
 <?php
     include 'database.php';
     
@@ -5,36 +11,50 @@
     {
         extract($_POST);
         $id = $_SESSION["ID"];
-        if(!is_null($username)){
+        if(!($username == NULL)){
             $sql=mysqli_query($conn,"UPDATE USER_FORUM SET USER_FORUM_NAME='$username' WHERE USER_FORUM_ID = '$id'");
         }
 
-        if(!is_null($email))
+        if(!($email == NULL))
         {
             $sql=mysqli_query($conn,"UPDATE USER_FORUM SET USER_FORUM_EMAIL='$email' WHERE USER_FORUM_ID = '$id'");
         }
-        if(!is_null($about))
+        if(!($about == NULL))
         {
             $sql=mysqli_query($conn,"UPDATE USER_FORUM SET USER_FORUM_EMAIL='$about' WHERE USER_FORUM_ID = '$id'");
         }
-        if(!is_null($image))
-        {
-              	// Get image name
-  	            $image = $_FILES['image']['name'];
+          
+            
+          
+        
+        header ("Location: profile.php");
+    }
 
-  	            // image file directory
-  	            $target = "images/".basename($image);
-
-            	$sql = "UPDATE USER_FORUM SET USER_FORUM_IMAGE = '$image' WHERE USER_FORUM_ID = '$id'";
-  	            // execute query
-  	            mysqli_query($conn, $sql);
-
-            	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-  		        $msg = "Image uploaded successfully";
-            	}else{
-  		            $msg = "Failed to upload image";
-  	            }
+    if(isset($_POST['but_upload']))
+    {
+        $id = $_SESSION["ID"];
+        $name = $_FILES['file']['name'];
+        $target_dir = "images/";
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+      
+        // Select file type
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      
+        // Valid file extensions
+        $extensions_arr = array("jpg","jpeg","png","gif");
+      
+        // Check extension
+        if( in_array($imageFileType,$extensions_arr) ){
+       
+           // Insert record
+           $query = "UPDATE USER_FORUM SET USER_FORUM_IMAGE = '".$name."' WHERE USER_FORUM_ID = '$id'";
+           mysqli_query($conn,$query);
+        
+           // Upload file
+           move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
+      
         }
+
         header ("Location: profile.php");
     }
 

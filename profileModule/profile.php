@@ -46,11 +46,13 @@
                      include 'database.php';
                      $id = $_SESSION['ID'] ;
 
-                    $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+                    $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_ID"];
+          }
         
         
         
@@ -63,11 +65,14 @@
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_NAME"];
+          }
+         
         
         
         
@@ -80,11 +85,14 @@
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_EMAIL FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_EMAIL FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_EMAIL"];
+          }
+        ; 
         
         
         
@@ -97,11 +105,14 @@
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_ABOUT FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_ABOUT FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_ABOUT"];
+          }
+        
         
         
         
@@ -111,16 +122,20 @@
         </div>  
     </div>
     <div class="column right3">
-        <img src=         <?php 
+        <img src=       <?php 
         
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_IMAGE FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_IMAGE FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "images/";
+            echo $row["USER_FORUM_IMAGE"];
+          }
+        
         
         
         
@@ -133,11 +148,14 @@
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_NAME"];
+          }
+        
         
         
         
@@ -148,11 +166,14 @@
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_ID"];
+          }
+        
         
         
         

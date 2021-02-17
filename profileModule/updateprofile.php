@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<?php 
+    include('signinProcess.php');
+?>
+
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -37,16 +42,22 @@
                     <br>
 
                     <label for="email"><b>New Email</b></label><br>
-                    <input style="width:30em;" type="email" placeholder="Enter Email" name="email" required>
+                    <input style="width:30em;" type="email" placeholder="Enter Email" name="email" >
                     <br>
-                    <input type="hidden" name="size" value="1000000">
-                    <label for="hometown"><b>Select a profile picture:</b></label><br>
-                    <input type="file" id="myFile" size="50" name="image">
-                    <br>
+
                     
                     <label for="about"><b>About</b></label><br>
                     <textarea name = "about" form = "form">About...</textarea>
                     <button type="submit"style="width:13em;" name = 'update'>Update Profile</button>
+            </div>
+        </form>
+
+        <form action="updateProfileProcess.php" method="post" enctype="multipart/form-data">
+            <div class="container">
+                    <input type="file" name="file" />
+                    <br>
+
+                    <input type="submit"style="width:13em;" value='Select Profile Picture' name = but_upload>
             </div>
         </form>
     </div>
@@ -56,11 +67,15 @@
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_IMAGE FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_IMAGE FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "images/";
+            echo $row["USER_FORUM_IMAGE"];
+          }
+        
         
         
         
@@ -73,11 +88,14 @@
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_NAME FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_NAME"];
+          }
+        
         
         
         
@@ -88,11 +106,14 @@
         include 'database.php';
         $id = $_SESSION['ID'] ;
 
-        $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = $id"; 
+        $sql = "SELECT USER_FORUM_ID FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
         
-        echo $result; 
+        while($row = mysqli_fetch_assoc($result)) {
+            echo $row["USER_FORUM_ID"];
+          }
+        
         
         
         
