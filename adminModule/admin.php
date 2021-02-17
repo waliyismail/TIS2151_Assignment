@@ -24,7 +24,7 @@
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="pass" required>
                     
-                <button type="submit" name = "save">Login</button>
+                <button class="button" type="submit" name = "save">Login</button>
         </div>
         
     </form>

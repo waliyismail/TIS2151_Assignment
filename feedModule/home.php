@@ -19,7 +19,7 @@
             <li><a class="active">Home</a></li>
             <li><a href="/profileModule/profile.php">Profile</a></li>
             <li style="float:right"><a href="#contact">Log Out</a></li>
-            
+
         </ul>
     </div>
 </div>
@@ -56,10 +56,7 @@
     </div>
 </div>
 
-<div class = "loginbox" style="height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
-    Copyright OPnion. All rights reserved  
-    @2021 Online Generated Content Web Forum System
-</div>
+
 </body>
 
 </html>

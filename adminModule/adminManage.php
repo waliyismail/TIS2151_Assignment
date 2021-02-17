@@ -31,6 +31,37 @@
     <div class="column left3">
     <h2>Manage User Account</h2>
         <div class="boxborder">
+        <table>
+                <tr>
+                    <th>List </th>
+                    <th>Account</th>
+                    <th>Delete Account</th>              
+                <tr>
+                    <td>1</td>
+                    <td>HazwaniSalleh</td>
+                    <td><button class="buttonDelete">DELETE</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>WaliyIsmail</td>
+                    <td><button class="buttonDelete">DELETE</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>AmirulIman</td>
+                    <td><button class="buttonDelete">DELETE</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>GanXinYun</td>
+                    <td><button class="buttonDelete">DELETE</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>RizalAzmin</td>
+                    <td><button class="buttonDelete">DELETE</button></td>
+                </tr>
+            </table>
             
         </div>  
     </div>
@@ -45,7 +76,7 @@
 
 
 
-<div class = "loginbox" style="height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
+<div class = "loginboxx" style="height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
     Copyright OPnion. All rights reserved  
     @2021 Online Generated Content Web Forum System
 </div>

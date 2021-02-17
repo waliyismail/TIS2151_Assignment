@@ -29,12 +29,8 @@
     <div class="column left3">
     <h2>FORUM TYPE : POLITIC</h2>
     <h3>About : You can discuss on all politics on all over the world.</h3>
-        <!-- create post -->
-        <div style="background-color: rgb(220, 237, 255);padding-left:2em;padding-right:4em;border: 3px solid #ccc;padding:1em;margin:2em;margin-right:4em;">
-            <img src="/public/postsymbol.png" alt="post" style="width:3em;">
-            <a href="home.php" ><input style="float:right;" type="text" placeholder="Create Post" name="create" required></a>
-        </div>
-        <!-- posting -->
+
+        <!-- comment post -->
         <div class="boxborder" >
             <p style="font-size: 14px;" >Title : Hari Malaysia | by : @HazwaniSalleh</p>
             <p>
@@ -44,39 +40,50 @@
                 dengan saya?
                 </p>
             <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
-            <a href="comment.php"style="font-size: 14px;"> <button>0 comments</button></a>
             <button>Upvote</button>
             <button>Downvote</button>
             <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div> 
-        <div class="boxborder" >
-            <p style="font-size: 14px;" >Title : Hari Malaysia | by : @AmirulIman</p>
-            <p>
-                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan 
-                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat. 
-                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda 
-                dengan saya?
+            <br>
+            <div class="yourcomments">
+                <form>
+                    <label for="about"><b>Your comments :</b></label><br>
+                    <textarea>...</textarea>
+                    <button type="submit"style="width:13em;">Comment</button>
+                </form>
+            </div>
+            <div class="comments">
+                <p style="font-size: 14px;" >comment by : @AmirulIman</p>
+                <p>
+                Saya sangat setuju dengan apa yg saudari sampaikan. Sebagai rakyat Malaysia,
+                kita seharusnya berbangga mengibarkan bendera Malaysia. Bukan saja pada hari merdeka
+                tetapi pada hari hari lain juga.
                 </p>
-            <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
-            <a href="#"style="font-size: 14px;"> <button>0 comments</button></a>
-            <button>2 Upvote</button>
-            <button>3 Downvote</button>
-            <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div>  
-        <div class="boxborder" >
-            <p style="font-size: 14px;" >Title : Hari Malaysia | by : @WaliyIsmail</p>
-            <p>
-                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan 
-                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat. 
-                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda 
-                dengan saya?
+            </div>
+            <div class="comments">
+                <p style="font-size: 14px;" >comment by : @WaliyIsmail</p>
+                <p>
+                Betul betul! Saya sangat bersetuju 100%.
                 </p>
-            <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
-            <a href="#"style="font-size: 14px;"> <button>0 comments</button></a>
-            <button>Upvote</button>
-            <button>Downvote</button>
-            <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div> 
+            </div>
+            <div class="comments">
+                <p style="font-size: 14px;" >comment by : @GanXinYun</p>
+                <p>
+                Betul betul! Saya sangat bersetuju 100%.
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div> 
+        
         <br>
 
 
