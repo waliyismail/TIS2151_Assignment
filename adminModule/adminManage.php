@@ -48,7 +48,13 @@
                 echo "<tr>";
                 echo "<td>" . $count . "</td>";
                 echo "<td>" . $row['USER_FORUM_ID'] . "</td>";
-                echo "<td></td>";
+                echo "<td><form action='deleteProcess.php?name=\"";
+                echo $row['USER_FORUM_ID'];
+                echo "\"";
+                echo "method=\"post\"><input type=\"hidden\" name=\"name\" value=\"";
+                echo $row['USER_FORUM_ID'];
+                echo "\">";
+                echo "<input type=\"submit\" name=\"submit\" value=\"Delete\"></form></td>";
                 echo "</tr>";
                 $count++;
             }
