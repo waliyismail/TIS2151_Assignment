@@ -19,10 +19,23 @@
             $query = htmlspecialchars($query); // changes characters used in html to their equivalents
             $query = mysql_real_escape_string($query); // makes sure nobody uses SQL injection
             
-            $raw_results = mysql_query(
-                "SELECT * 
-                FROM `comment, forum, post, user_forum`
-                WHERE (`title` LIKE '%".$query."%') OR (`text` LIKE '%".$query."%')") 
+            $raw_results = mysql_query( // comment, forum, post
+                "SELECT *
+                FROM comment
+                WHERE (`comment_text` LIKE '%".$query."%')
+
+                UNION ALL
+
+                SELECT *
+                FROM forum
+                WHERE (`forum_name` LIKE '%".$query."%') OR (`forum_about` LIKE '%".$query."%')
+
+                UNION ALL
+
+                SELECT *
+                FROM post
+                WHERE (`post_title` LIKE '%".$query."%') OR (`post_content` LIKE '%".$query."%')")
+                
                 or die(mysql_error())
             
             if(mysql_num_rows($raw_results) > 0){ // if one or more rows are returned do following
@@ -30,8 +43,10 @@
                 while($results = mysql_fetch_array($raw_results)){
                     // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
                 
-                    echo "<p><h3>".$results['title']."</h3>".$results['text']."</p>";
-                    // posts results gotten from database(title and text) you can also show id ($results['id'])
+                    echo "<p><h3>".$results['comment_text']."</h3></p>";
+                    echo "<p><h3>".$results['forum_name']."</h3>".$results['forum_about']."</p>";
+                    echo "<p><h3>".$results['post_title']."</h3>".$results['post_content']."</p>";
+                    // posts results gotten from database
                 }
                 
             }
