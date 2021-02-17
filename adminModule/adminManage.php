@@ -31,6 +31,11 @@
     <div class="column left3">
     <h2>Manage User Account</h2>
         <div class="boxborder">
+        <p>Insert User Id to delete account :</p>
+        <form action="deleteProcess.php" method='post'>
+        <input style="width:30em;" type="text" placeholder="User Id" name="name" required> <button class="button"type="DELETE"style="width:13em;">DELETE</button>
+        </form>
+        <br><hr>
         <table>
                 
         <?php include "database.php";
@@ -39,7 +44,7 @@
             "<tr>
                 <th>List </th>
                 <th>User ID</th>
-                <th>Delete Account</th> 
+
             </tr>";
 
             $count=1;
@@ -48,13 +53,6 @@
                 echo "<tr>";
                 echo "<td>" . $count . "</td>";
                 echo "<td>" . $row['USER_FORUM_ID'] . "</td>";
-                echo "<td><form action='deleteProcess.php?name=\"";
-                echo $row['USER_FORUM_ID'];
-                echo "\"";
-                echo "method=\"post\"><input type=\"hidden\" name=\"name\" value=\"";
-                echo $row['USER_FORUM_ID'];
-                echo "\">";
-                echo "<input type=\"submit\" name=\"submit\" value=\"Delete\"></form></td>";
                 echo "</tr>";
                 $count++;
             }
@@ -62,6 +60,9 @@
 
             mysqli_close($conn); ?>             
 
+
+            <br>
+            
         </div>  
     </div>
     <div class="column right3">
