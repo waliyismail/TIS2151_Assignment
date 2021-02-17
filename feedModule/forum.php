@@ -19,12 +19,10 @@
             <li><a class="active">Home</a></li>
             <li><a href="/profileModule/profile.php">Profile</a></li>
             <li style="float:right"><a href="#contact">Log Out</a></li>
-            
+
         </ul>
     </div>
 </div>
-
-
 <div class="row">
     <div class="column left3">
     <h2>FORUM TYPE : POLITIC</h2>
@@ -32,15 +30,15 @@
         <!-- create post -->
         <div style="background-color: rgb(220, 237, 255);padding-left:2em;padding-right:4em;border: 3px solid #ccc;padding:1em;margin:2em;margin-right:4em;">
             <img src="/public/postsymbol.png" alt="post" style="width:3em;">
-            <a href="home.php" ><input style="float:right;" type="text" placeholder="Create Post" name="create" required></a>
+            <a href="/discussionModule/createPost.php" ><input style="float:right;" type="text" placeholder="Create Post" name="create" required></a>
         </div>
         <!-- posting -->
         <div class="boxborder" >
             <p style="font-size: 14px;" >Title : Hari Malaysia | by : @HazwaniSalleh</p>
             <p>
-                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan 
-                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat. 
-                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda 
+                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan
+                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat.
+                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda
                 dengan saya?
                 </p>
             <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
@@ -48,13 +46,13 @@
             <button>Upvote</button>
             <button>Downvote</button>
             <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div> 
+        </div>
         <div class="boxborder" >
             <p style="font-size: 14px;" >Title : Hari Malaysia | by : @AmirulIman</p>
             <p>
-                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan 
-                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat. 
-                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda 
+                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan
+                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat.
+                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda
                 dengan saya?
                 </p>
             <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
@@ -62,13 +60,13 @@
             <button>2 Upvote</button>
             <button>3 Downvote</button>
             <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div>  
+        </div>
         <div class="boxborder" >
             <p style="font-size: 14px;" >Title : Hari Malaysia | by : @WaliyIsmail</p>
             <p>
-                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan 
-                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat. 
-                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda 
+                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan
+                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat.
+                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda
                 dengan saya?
                 </p>
             <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
@@ -76,7 +74,7 @@
             <button>Upvote</button>
             <button>Downvote</button>
             <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div> 
+        </div>
         <br>
 
 
@@ -93,7 +91,7 @@
         <ul class="ulprof">
             <li class="liprof"><a href="forum.php">Politic</a></li>
             <li class="liprof"><a href="forum.php">Hardware</a></li>
-            
+
         </ul>
 <hr>
         <h3 style="text-align:center;">List of All Forum</h3>
