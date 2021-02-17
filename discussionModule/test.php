@@ -1,8 +1,15 @@
 <?php
   include "conn.php";
- $getPost = "SELECT * FROM POST WHERE POST_ID=1";
-$post = mysqli_query($conn, $getPost);
-$post = mysqli_fetch_array($post);
-$GLOBALS['variable'] = "something";
-echo $GLOBALS['variable'];
 ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="file" name="pic" accept="image/png, image/jpeg">
+    window.alert("sds");
+
+  </body>
+</html>

@@ -29,7 +29,7 @@
             // to be change to be dynamically
       $forum_name = "Sdsa";
       $postid=3;
-      $userid='mrsstyle'; // post author id
+      $userid='waliywow'; // post author id
     };
     if (isset($_POST['add_comment'])){
       $comment_text = $_POST["comment_text"];
@@ -59,6 +59,32 @@
         $author = mysqli_query($conn, $getPostAuthor);
         $author = mysqli_fetch_array($author);
       ?>
+      <?php
+
+      //deleting comment
+       if(isset($_POST["delete_comment"])){
+
+         $comment_id = $_POST["comment_id"];
+         $sql = "DELETE FROM COMMENT WHERE COMMENT_ID=$comment_id";
+         $result = mysqli_query($conn, $sql);
+         if(!$result) {echo mysqli_error($conn);}
+         else {echo "<script> window.alert('Your Comment Has Been Deleted!!!');</script>";}
+       }
+       if(isset($_POST["delete_post"])){
+
+         $post_id = $_POST["post_id"];
+         // find associated comment first
+         $deletecomment = "DELETE FROM COMMENT WHERE POST_ID=$post_id";
+         $result = mysqli_query($conn, $deletecomment);
+         if(!$result) {echo mysqli_error($conn);}
+
+         // delete post
+         $sql = "DELETE FROM POST WHERE POST_ID=$post_id";
+         $result = mysqli_query($conn, $sql);
+         if(!$result) {echo mysqli_error($conn);}
+         else {echo "<script> window.alert('Your OPnion Has Been Deleted');window.location='/feedModule'</script>";}
+       }
+       ?>
       <div class="post-content">
         <!-- user id, user avatar, post content -->
         <!-- get post by id then display here -->
@@ -77,13 +103,19 @@
           <input type="submit" name="reported" value="Report Post" >
         </form>
         <!-- if post author this button shows up -->
-        <button type="button" onclick="confirmDelete()">Delete post</button>
+        <?php if($currentuserid === $author["USER_FORUM_ID"]){?>
+          <!-- ability to delete comment -->
+          <form class="" action="#" method="post">
+            <input type="hidden" name="post_id" value="<?php echo $post["POST_ID"]; ?>">
+            <input type="submit" name="delete_post" value="Delete Post">
+          </form>
+          <?php } ?>
         <!-- if user is logged in -->
         <div class="user-comment">
           <p>Comment as<b> @<?php echo $currentuserid; ?></b></p>
           <form class="comment" action="post.php" method="post">
             <!-- add comment to database -->
-            <textarea name="comment_text" placeholder="what are your thought?"></textarea>
+            <textarea name="comment_text" placeholder="What is on your mind?"></textarea>
             <!-- other info to be added -->
             <input type="file" name="comment_image" accept="image/png, image/jpeg"/>
             <input type="hidden" name="post_id" value="<?php echo $postid; ?>"/>
@@ -116,17 +148,19 @@
                   </form>
                   <?php if($currentuserid === $comment_author["USER_FORUM_ID"]){?>
                     <!-- ability to delete comment -->
-                    <form class="" action="delete.php" method="post">
+                    <form class="" action="post.php" method="post">
+                      <input type="hidden" name="comment_id" value="<?php echo $row["COMMENT_ID"]; ?>">
                       <input type="submit" name="delete_comment" value="Delete Comment">
                     </form>
                   <?php } ?>
                 </div>
              <?php } } ?>
+
       </div>
     </div>
     <script type="text/javascript">
       function confirmDelete(){
-        var r = window.confirm("are you sure you want to delete this?");
+        var r = window.confirm("Are you sure you want to delete this?");
         if(r)
         {
 
