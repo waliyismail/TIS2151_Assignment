@@ -20,7 +20,7 @@
             <li><a href="adminReport.php">User Report</a></li>
             <li><a class="active">Account Management</a></li>
             
-            <li style="float:right"><a href="#contact">Log Out</a></li>
+            <li style="float:right"><a href="/logout.php">Log Out</a></li>
           
         </ul>
     </div>
@@ -32,37 +32,30 @@
     <h2>Manage User Account</h2>
         <div class="boxborder">
         <table>
-                <tr>
-                    <th>List </th>
-                    <th>Account</th>
-                    <th>Delete Account</th>              
-                <tr>
-                    <td>1</td>
-                    <td>HazwaniSalleh</td>
-                    <td><button class="buttonDelete">DELETE</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>WaliyIsmail</td>
-                    <td><button class="buttonDelete">DELETE</button></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>AmirulIman</td>
-                    <td><button class="buttonDelete">DELETE</button></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>GanXinYun</td>
-                    <td><button class="buttonDelete">DELETE</button></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>RizalAzmin</td>
-                    <td><button class="buttonDelete">DELETE</button></td>
-                </tr>
-            </table>
-            
+                
+        <?php include "database.php";
+            $result = mysqli_query($conn,"SELECT USER_FORUM_ID FROM USER_FORUM");
+            echo 
+            "<tr>
+                <th>List </th>
+                <th>User ID</th>
+                <th>Delete Account</th> 
+            </tr>";
+
+            $count=1;
+            while($row = mysqli_fetch_array($result))
+            {
+                echo "<tr>";
+                echo "<td>" . $count . "</td>";
+                echo "<td>" . $row['USER_FORUM_ID'] . "</td>";
+                echo "<td><button class=\"buttonDelete\">DELETE</button></td>";
+                echo "</tr>";
+                $count++;
+            }
+            echo "</table>";
+
+            mysqli_close($conn); ?>             
+
         </div>  
     </div>
     <div class="column right3">

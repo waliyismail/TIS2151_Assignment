@@ -19,7 +19,7 @@
             <li><a href="/feedModule/home.php">Home</a></li>
             <li><a class="active" >Profile</a></li>
             
-            <li style="float:right"><a href="#contact">Log Out</a></li>
+            <li style="float:right"><a href="/logout.php">Log Out</a></li>
         
         </ul>
     </div>
@@ -33,7 +33,7 @@
             <div class="container">
 
                     <label for="username"><b>New Username</b></label><br>
-                    <input style="width:30em;" type="text" placeholder="Enter Username" name="username" required>
+                    <input style="width:30em;" type="text" placeholder="Enter Username" name="user_name" required>
                     <br>
 
                     <label for="email"><b>New Email</b></label><br>

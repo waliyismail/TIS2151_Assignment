@@ -16,9 +16,9 @@
 <div class="behind">
     <div class="navbar">
         <ul>
-            <li><a class="active">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li><a href="/profileModule/profile.php">Profile</a></li>
-            <li style="float:right"><a href="#contact">Log Out</a></li>
+            <li style="float:right"><a href="/logout.php">Log Out</a></li>
 
         </ul>
     </div>

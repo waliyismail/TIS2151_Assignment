@@ -19,7 +19,7 @@
             <li><a href="adminMain.php">Forum</a></li>
             <li><a class="active">User Report</a></li>
             <li><a href="adminManage.php">Account Management</a></li>
-            <li style="float:right"><a href="#contact">Log Out</a></li>
+            <li style="float:right"><a href="/logout.php">Log Out</a></li>
         </ul>
     </div>
 </div>

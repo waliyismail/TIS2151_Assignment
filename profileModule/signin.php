@@ -16,10 +16,8 @@
 <div class="row">
 
     <div class="column left2">
-
         <div class="loginbox">
             <h1 style="text-align:center;">Welcome to OPnion</h1>
-
             <form action="signinProcess.php" method="post">
                 <div class="clearfix">
                     <div class="box" >

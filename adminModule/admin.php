@@ -15,7 +15,7 @@
 
 <div class="loginbox" style="margin-top:6em;">
     <h1 style="text-align:center;">Welcome Admin OPnion</h1>
-    <form action="signinProcess.php" method="post">
+    <form action="adminSignin.php" method="post">
         <br>
         <div class="container">
             <label for="uname"><b>User ID</b></label>
@@ -24,7 +24,7 @@
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="pass" required>
                     
-                <button class="button" type="submit" name = "save">Login</button>
+                <button class="button" type="login" name = "save">Login</button>
         </div>
         
     </form>

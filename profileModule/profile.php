@@ -26,7 +26,7 @@
             <li><a href="/feedModule/home.php">Home</a></li>
             <li><a class="active">Profile</a></li>
             
-            <li style="float:right"><a href="#contact">Log Out</a></li>
+            <li style="float:right"><a href="/logout.php">Log Out</a></li>
       
         </ul>
     </div>

@@ -19,9 +19,9 @@
             <li><a class="active">Forum</a></li>
             <li><a href="adminReport.php">User Report</a></li>
             <li><a href="adminManage.php">Account Management</a></li>
-            
-            <li style="float:right"><a href="#contact">Log Out</a></li>
-          
+            <form>
+            <li style="float:right"><a href="/logout.php">Log Out</a></li>
+            </form>
         </ul>
     </div>
 </div>
@@ -33,14 +33,14 @@
     <div class="boxborder">
         <form action="/action_page.php" method="post">
             
-                    <label for="userid"><b>Forum Title</b></label><br>
-                    <input style="width:30em;" type="text" placeholder="Enter User ID" name="userid" required>
+                    <label for="forumid"><b>Forum Title</b></label><br>
+                    <input style="width:30em;" type="text" placeholder="Enter Forum Title" name="forumid" required>
                     <br>
 
                     
                     <label for="about"><b>Forum About</b></label><br>
                     <textarea>About...</textarea>
-                    <button class="button"type="submit"style="width:13em;">Create Forum</button>
+                    <button class="button"type="text"style="width:13em;">Create Forum</button>
         </form> 
         </div>
     </div>

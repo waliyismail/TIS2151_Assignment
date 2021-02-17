@@ -29,16 +29,16 @@
             <hr class="login"style="margin: 0px; width:50%;">
             <br>
             <div class="container">
-                    <label for="uname"><b>User ID</b></label>
+                    <label for="uid"><b>User ID</b></label>
                     <input type="text" placeholder="Enter User ID" name="userid" required>
                     <br>
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="pass" required>
                     <br>
                     <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="username" required>
+                    <input type="text" placeholder="Enter Username" name="user_name" required>
                     <br>
-                    <label for="uname"><b>Email</b></label>
+                    <label for="mail"><b>Email</b></label>
                     <input type="email" placeholder="Enter Email" name="email" required>
                     <br>
                     <button type="submit" name="save">Signup</button>
