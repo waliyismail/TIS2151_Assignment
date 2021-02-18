@@ -63,7 +63,7 @@
                 // echo var_dump($forum_list);
                 // echo "           "?>
 
-              <li class="liprof"><a href="/feedModule/forum.php?forum=<?php echo $forum["0"]; ?>&forumname=<?php echo $forum["1"]; ?>"><?php echo $forum["1"]; ?></a></li>
+              <li class="liprof"><a><?php echo $forum["1"]; ?></a></li>
             <?php } ?>
 
         </ul>

@@ -18,7 +18,7 @@
       $result = mysqli_query($conn, $sql);
       if(!$result) {echo mysqli_error($conn);}
       else {echo "<script> window.alert('Forum has been created')</script>";
-        header("Location: adminManage.php"); }
+        header("Location: adminMain.php"); }
 
 
     }
