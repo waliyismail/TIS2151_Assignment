@@ -40,7 +40,7 @@
         <div class="boxborder" >
               <p style="font-size: 14px;" >Title : <?php echo $post["POST_TITLE"]; ?> | by : @<?php echo $post["USER_FORUM_ID"];?></p>
               <p><?php echo $post["POST_CONTENT"]; ?></p>
-              <?php if(isset($post['POST_IMAGE'])) {?>
+              <?php if(is_null($post['POST_IMAGE'])) {?>
                 <img src="post_images/<?php echo $post["POST_IMAGE"]; ?>" alt="post image" style="width:50%;"><br> <?php } ?>
               <button>Upvote</button>
               <button>Downvote</button>
