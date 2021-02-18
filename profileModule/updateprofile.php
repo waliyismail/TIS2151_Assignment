@@ -76,8 +76,12 @@
         
         while($row = mysqli_fetch_assoc($result)) {
             echo "images/";
+            if(empty($row["USER_FORUM_IMAGE"]))
+            {
+                echo "defaultpic.jpg";
+            }
             echo $row["USER_FORUM_IMAGE"];
-          }
+        }
         
         
         

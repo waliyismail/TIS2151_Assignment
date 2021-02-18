@@ -130,11 +130,17 @@
         $sql = "SELECT USER_FORUM_IMAGE FROM USER_FORUM WHERE USER_FORUM_ID = '$id'"; 
 
         $result = mysqli_query($conn,$sql);
+
+
         
         while($row = mysqli_fetch_assoc($result)) {
             echo "images/";
+            if(empty($row["USER_FORUM_IMAGE"]))
+            {
+                echo "defaultpic.jpg";
+            }
             echo $row["USER_FORUM_IMAGE"];
-          }
+        }
         
         
         
