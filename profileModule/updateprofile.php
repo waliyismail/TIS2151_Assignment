@@ -41,9 +41,6 @@
                 <input style="width:30em;" type="text" placeholder="Enter Username" name="user_name" >
                 <br>
 
-                    <label for="username"><b>New Username</b></label><br>
-                    <input style="width:30em;" type="text" placeholder="Enter Username" name="username" >
-                    <br>
 
                     <label for="email"><b>New Email</b></label><br>
                     <input style="width:30em;" type="email" placeholder="Enter Email" name="email" >
