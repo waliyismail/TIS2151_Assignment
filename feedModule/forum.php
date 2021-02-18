@@ -41,8 +41,8 @@
         <!-- posting -->
           <!-- loop all posts -->
       <?php
-          if(mysqli_num_rows($GLOBALS['posts']) > 0) {
-            while ($post = mysqli_fetch_array($GLOBALS['posts'])) {
+          if(mysqli_num_rows($posts) > 0) {
+            while ($post = mysqli_fetch_array($posts)) {
                 //  PUT IN VALUE OF UPVOTE DOWNVOTE 
                 $post_title = $post["POST_TITLE"];
                 $post_content = $post["POST_CONTENT"];
@@ -58,7 +58,7 @@
               <p style="font-size: 14px;" >Title : <?php echo $post_title ?> | by : @<?php echo $userid ?></p>
               <p><?php echo $post_content ?></p>
               <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
-              <a href="comment.php?forumid=<?php echo $_GET["forum"]; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"> <button><?php echo $comment_count ?> comments</button></a>
+              <a href="comment.php?forumid=<?php echo $forum["FORUM_ID"]; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"> <button><?php echo $comment_count ?> comments</button></a>
               <form action="upvoteProcess.php" method="post">
                 <input type="hidden" name="action" value="<?php echo $postid ?>" />  
                 <input id="Upvote-Submit" type="Submit" name="submit" value="Upvote">
