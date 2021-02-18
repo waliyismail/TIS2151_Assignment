@@ -35,14 +35,13 @@
 ?>
 <div class="row">
     <div class="column left3">
-      <!-- TODO : get forum details -->
     <h2>FORUM NAME : <?php echo $forum['FORUM_NAME']?></h2>
     <h3>About : <?php  echo $forum['FORUM_ABOUT'] ?></h3>
         <div class="boxborder" >
               <p style="font-size: 14px;" >Title : <?php echo $post["POST_TITLE"]; ?> | by : @<?php echo $post["USER_FORUM_ID"];?></p>
               <p><?php echo $post["POST_CONTENT"]; ?></p>
-              <?php if($post["POST_IMAGE"] != NULL) {?>
-                <img src="<?php echo $post["POST_IMAGE"]; ?>" alt="Website name" style="width:50%;"><br> <?php } ?>
+              <?php if(isset($post['POST_IMAGE'])) {?>
+                <img src="post_images/<?php echo $post["POST_IMAGE"]; ?>" alt="post image" style="width:50%;"><br> <?php } ?>
               <button>Upvote</button>
               <button>Downvote</button>
               <!-- if post author this button shows up -->

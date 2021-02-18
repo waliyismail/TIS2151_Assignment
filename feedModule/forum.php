@@ -43,7 +43,7 @@
       <?php
           if(mysqli_num_rows($posts) > 0) {
             while ($post = mysqli_fetch_array($posts)) {
-                //  PUT IN VALUE OF UPVOTE DOWNVOTE 
+                //  PUT IN VALUE OF UPVOTE DOWNVOTE
                 $post_title = $post["POST_TITLE"];
                 $post_content = $post["POST_CONTENT"];
                 $post_image = $post["POST_IMAGE"];
@@ -57,13 +57,24 @@
              <div class="boxborder" >
               <p style="font-size: 14px;" >Title : <?php echo $post_title ?> | by : @<?php echo $userid ?></p>
               <p><?php echo $post_content ?></p>
-              <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
+              <?php if (isset($post_image)){ ?>
+              <img src="post_images/<?php echo $post_image ?>" alt="" style="width:50%;">
+            <?php } ?>
+              <br>
               <a href="comment.php?forumid=<?php echo $forum["FORUM_ID"]; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"> <button><?php echo $comment_count ?> comments</button></a>
               <form action="upvoteProcess.php" method="post">
-                <input type="hidden" name="action" value="<?php echo $postid ?>" />  
+                <input type="hidden" name="action" value="<?php echo $postid ?>" />
                 <input id="Upvote-Submit" type="Submit" name="submit" value="Upvote">
                 <input id="Downvote-Submit" type="Submit" name="submit" value="Downvote">
               </form>
+              <?php if($GLOBALS["currentuserid"] === $userid){?>
+              <!-- ability to delete post -->
+              <form class="" action="#" method="post">
+                <input type="hidden" name="post_id" value="<?php echo $post["POST_ID"]; ?>">
+                <input type="hidden" name="forum_id" value="<?php echo $post["FORUM_ID"]; ?>">
+                <input type="submit" name="delete_post" value="Delete Post">
+              </form>
+              <?php } ?>
               <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
               </div>
         <?php }} ?>

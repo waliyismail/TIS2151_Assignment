@@ -34,11 +34,11 @@
     <h2>Create a post</h2>
         <div class="boxborder">
             <h4>Post as @<?php echo $GLOBALS['currentuserid'] ?> in forum <?php echo $forum['FORUM_NAME'] ?></h4>
-            <form class="create-post" action="../feedModule/forum.php?forumid=<?php echo $forum['FORUM_ID']  ?>" method="post">
+            <form class="create-post" action="../feedModule/forum.php?forumid=<?php echo $forum['FORUM_ID']  ?>" enctype="multipart/form-data" method="post">
               <!-- include post in database -->
               <textarea id="text-title" name="post_title" placeholder="Title" maxlength="120"></textarea><br>
               <textarea name="post_content" rows="5" cols="40"placeholder="What's your OPnion?"></textarea><br>
-              <input type="file" name="post_image">
+              <input type="file" name="post_image" >
               <input type="hidden" name="user_forum_id" value="<?php echo $currentuserid;?>">
               <input type="hidden" name="forum_id" value="<?php echo $forum['FORUM_ID'];?>">
               <button type="submit" name="submit_post" style="font-size: 14px;float:right;">Post</button>

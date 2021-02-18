@@ -75,16 +75,18 @@
 
       $title = $_POST["post_title"];
       $content = $_POST['post_content'];
-      $image = $_POST['post_image'];
+      $imgname = $_FILES['post_image']['name'];
+      $imgdir ="post_images/" .$imgname;
       $userid =  $_POST['user_forum_id'];
       $forumid= $_POST['forum_id'];
+      move_uploaded_file($_FILES['post_image']['tmp_name'],$imgdir);
 
       if(empty($title) || empty($content))
       {
         echo "<script> window.alert('Please fill in title and content before posting!!')</script>";
       }else{
 
-        $sql = "INSERT INTO POST(post_title, post_content, post_image, user_forum_id, forum_id) values ('$title', '$content', '$image', '$userid', '$forumid')";
+        $sql = "INSERT INTO POST(post_title, post_content, post_image, user_forum_id, forum_id) values ('$title', '$content', '$imgname', '$userid', '$forumid')";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if(!$result) {echo mysqli_error($GLOBALS['conn']);}
         else {echo "<script> window.alert('Your OPnion Has Been Posted!'); </script>";}
