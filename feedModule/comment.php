@@ -24,90 +24,12 @@
     </div>
 </div>
 
-
+<?php include "commentBackend.php" ?>
 <div class="row">
     <div class="column left3">
       <!-- TODO : get forum details -->
-    <h2>FORUM TYPE : POLITIC <?php echo $forum_name?></h2>
+    <h2>FORUM NAME : <?php echo $forum_name?></h2>
     <h3>About : You can discuss on all politics on all over the world.</h3>
-
-    <?php
-          include 'database.php';
-          session_start();
-
-          if(isset($_SESSION["ID"])){
-            $currentuserid = $_SESSION["ID"];
-                  // to be change to be dynamically
-            $forum_name = "Sdsa";
-            $postid=3;
-            $userid='waliywow'; // post author id
-          };
-          if (isset($_POST['add_comment'])){
-            $comment_text = $_POST["comment_text"];
-            $postid = $_POST['post_id'];
-            if(empty($comment_text)){
-              echo "<script> window.alert('Please type something before commenting!!')</script>";
-            }else{
-
-              $sql = "INSERT INTO COMMENT(comment_text, post_id, user_forum_id) values ('$comment_text', '$postid', '$currentuserid')";
-              $result = mysqli_query($conn, $sql);
-              if(!$result) {echo mysqli_error($conn);}
-              else {echo "<script> window.alert('Your Comment Has Been Posted!!!')</script>";}
-            }
-            }
-                //deleting comment
-             if(isset($_POST["delete_comment"])){
-
-               $comment_id = $_POST["comment_id"];
-               $sql = "DELETE FROM COMMENT WHERE COMMENT_ID=$comment_id";
-               $result = mysqli_query($conn, $sql);
-               if(!$result) {echo mysqli_error($conn);}
-               else {echo "<script> window.alert('Your Comment Has Been Deleted!!!');</script>";}
-             }
-             if(isset($_POST["delete_post"])){
-
-               $post_id = $_POST["post_id"];
-               // find associated comment first
-               $deletecomment = "DELETE FROM COMMENT WHERE POST_ID=$post_id";
-               $result = mysqli_query($conn, $deletecomment);
-               if(!$result) {echo mysqli_error($conn);}
-
-               // delete post
-               $sql = "DELETE FROM POST WHERE POST_ID=$post_id";
-               $result = mysqli_query($conn, $sql);
-               if(!$result) {echo mysqli_error($conn);}
-               else {echo "<script> window.alert('Your OPnion Has Been Deleted');window.location='/feedModule'</script>";}
-             }
-
-              $getPost = "SELECT * FROM POST WHERE POST_ID=$postid";
-              $post = mysqli_query($conn, $getPost);
-              $post = mysqli_fetch_array($post);
-
-              $getComment = "SELECT * FROM COMMENT WHERE POST_ID=$postid";
-              $comments = mysqli_query($conn, $getComment);
-
-              $getPostAuthor = "SELECT * FROM USER_FORUM WHERE USER_FORUM_ID='$userid'";
-              $author = mysqli_query($conn, $getPostAuthor);
-              $author = mysqli_fetch_array($author);
-      ?>
-
-          <script type="text/javascript">
-            function confirmDelete(){
-              var r = window.confirm("are you sure you want to delete this?");
-              if(r)
-              {
-
-              }
-              // if yes -> remove from database
-            }
-            function reportDetails(){
-              var report = window.prompt("please state why this post/comment is inappropriate?");
-
-            }
-          </script>
-
-
-
         <div class="boxborder" >
               <p style="font-size: 14px;" >Title : <?php echo $post["POST_TITLE"]; ?> | by : @<?php echo $author["USER_FORUM_ID"];?></p>
               <p><?php echo $post["POST_CONTENT"]; ?></p>
@@ -189,12 +111,21 @@
         </ul>
         <hr>
         <h3 style="text-align:center;">List of All Forum</h3>
+        <?php
+        $forum_list = getForum();
+        if(empty($forum_list)){
+          echo "<p> no forum yet.. </p>";
+        }else {        ?>
         <ul class="ulprof">
-            <li class="liprof"><a href="forum.php">Politic</a></li>
-            <li class="liprof"><a href="forum.php">Hardware</a></li>
-            <li class="liprof"><a href="forum.php">Gaming</a></li>
-            <li class="liprof"><a href="forum.php">Upvote</a></li>
+            <?php foreach ($forum_list as $forum) {
+                // echo var_dump($forum_list);
+                // echo "           "?>
+
+              <li class="liprof"><a href="/feedModule/forum.php?forum=<?php echo $forum["0"]; ?>&forumname=<?php echo $forum["1"]; ?>"><?php echo $forum["1"]; ?></a></li>
+            <?php } ?>
+
         </ul>
+      <?php } ?>
     </div>
   </div>
 

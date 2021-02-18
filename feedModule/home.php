@@ -22,9 +22,9 @@
 
         </ul>
     </div>
-    
-</div>
 
+</div>
+<?php include "forumBackend.php" ?>
 
 <div class="row">
     <div class="column left3">
@@ -43,7 +43,7 @@
             <button>Upvote</button>
             <button>Downvote</button>
             <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div> 
+        </div>
         <div class="boxborder" >
             <p style="font-size: 14px;" >Title : MERDEKA! | by : @AmirulIman | Forum : Politic</p>
             <p>
@@ -68,16 +68,25 @@
         <ul class="ulprof">
             <li class="liprof"><a href="forum.php">Politic</a></li>
             <li class="liprof"><a href="forum.php">Hardware</a></li>
-            
+
         </ul>
 <hr>
         <h3 style="text-align:center;">List of All Forum</h3>
+        <?php
+        $forum_list = getForum();
+        if(empty($forum_list)){
+          echo "<p> no forum yet.. </p>";
+        }else {        ?>
         <ul class="ulprof">
-            <li class="liprof"><a href="forum.php">Politic</a></li>
-            <li class="liprof"><a href="forum.php">Hardware</a></li>
-            <li class="liprof"><a href="forum.php">Gaming</a></li>
-            <li class="liprof"><a href="forum.php">Upvote</a></li>
+            <?php foreach ($forum_list as $forum) {
+                // echo var_dump($forum_list);
+                // echo "           "?>
+
+              <li class="liprof"><a href="/feedModule/forum.php?forum=<?php echo $forum["0"]; ?>&forumname=<?php echo $forum["1"]; ?>"><?php echo $forum["1"]; ?></a></li>
+            <?php } ?>
+
         </ul>
+      <?php } ?>
     </div>
 </div>
 

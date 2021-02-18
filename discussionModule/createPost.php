@@ -35,6 +35,7 @@
             if(isset($_SESSION["ID"])){
               $currentuserid = $_SESSION["ID"];
             };
+
             // add post content to database
             if (isset($_POST['submit_post'])){
               $title = $_POST["post_title"];
@@ -53,8 +54,8 @@
               }
 
               }?>
-              <?php $FORUM_ID = 1 ;
-                $forum_name = "POLITIC";
+              <?php $FORUM_ID = $_GET["id"] ;
+                $forum_name = $_GET["in"];
                // user id and forum id should be passed from the previos page ?>
             <h4>Post as @<?php echo $currentuserid ?> in forum <?php echo $forum_name ?></h4>
             <form class="create-post" action="createPost.php" method="post">

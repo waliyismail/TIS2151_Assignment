@@ -50,7 +50,7 @@
     <div class="column right3">
 
         <h2 style="margin-top:0;text-align:center;">ADMIN</h2>
-        <p style="margin-top:-1em;text-align:center;">@admin</p>
+        <p style="margin-top:-1em;text-align:center;">@<?php echo $GLOBALS['currentadminid'];?></p>
         <h3 style="text-align:center;">List of All Forum</h3>
         <!-- get forum from database -->
         <?php
@@ -63,7 +63,7 @@
                 // echo var_dump($forum_list);
                 // echo "           "?>
 
-              <li class="liprof"><a href="#"><?php echo $forum["0"]; ?></a></li>
+              <li class="liprof"><a href="/feedModule/forum.php?forum=<?php echo $forum["0"]; ?>&forumname=<?php echo $forum["1"]; ?>"><?php echo $forum["1"]; ?></a></li>
             <?php } ?>
 
         </ul>

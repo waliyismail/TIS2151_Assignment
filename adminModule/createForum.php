@@ -1,5 +1,10 @@
 <?php
   include "database.php";
+  session_start();
+
+  if(isset($_SESSION["ID"])){
+    $currentadminid = $_SESSION["ID"];
+  };
 
   if (isset($_POST["create_forum"]))
   {
@@ -18,7 +23,7 @@
 
   function getForum()
   {
-    $sql = "SELECT FORUM_NAME FROM FORUM";
+    $sql = "SELECT forum_id, FORUM_NAME FROM FORUM";
     $result = mysqli_query($GLOBALS['conn'], $sql);
     if(!$result) {echo mysqli_error($conn);}
 
