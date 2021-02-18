@@ -24,7 +24,7 @@
     </div>
 
 </div>
-<?php include "forumBackend.php" ?>
+<?php include "functions.php" ?>
 
 <div class="row">
     <div class="column left3">
@@ -72,21 +72,7 @@
         </ul>
 <hr>
         <h3 style="text-align:center;">List of All Forum</h3>
-        <?php
-        $forum_list = getForum();
-        if(empty($forum_list)){
-          echo "<p> no forum yet.. </p>";
-        }else {        ?>
-        <ul class="ulprof">
-            <?php foreach ($forum_list as $forum) {
-                // echo var_dump($forum_list);
-                // echo "           "?>
-
-              <li class="liprof"><a href="/feedModule/forum.php?forum=<?php echo $forum["0"]; ?>&forumname=<?php echo $forum["1"]; ?>"><?php echo $forum["1"]; ?></a></li>
-            <?php } ?>
-
-        </ul>
-      <?php } ?>
+        <?php include "forumList.php" ?>
     </div>
 </div>
 
