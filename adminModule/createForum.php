@@ -14,15 +14,20 @@
       echo "<script> window.alert('Please fill in all input')</script>";
     }else{
 
-      $sql = "INSERT INTO FORUM(forum_name,forum_about) values ('$forum_name', '$forum_about')";
+      $sql = "INSERT INTO FORUM(FORUM_NAME, FORUM_ABOUT) VALUES ('$forum_name', '$forum_about')";
       $result = mysqli_query($conn, $sql);
       if(!$result) {echo mysqli_error($conn);}
-      else {echo "<script> window.alert('Forum has been created')</script>";}
+      else {echo "<script> window.alert('Forum has been created')</script>";
+        header("Location: adminManage.php"); }
+
+
     }
   }
 
   function getForum()
   {
+    include "database.php";
+
     $sql = "SELECT forum_id, FORUM_NAME FROM FORUM";
     $result = mysqli_query($GLOBALS['conn'], $sql);
     if(!$result) {echo mysqli_error($conn);}

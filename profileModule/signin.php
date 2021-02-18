@@ -13,7 +13,7 @@
         </div>
     </div>
 
-<div class="row">
+<div class="row" style="height:45em;">
 
     <div class="column left2">
         <div class="loginbox">

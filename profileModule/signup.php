@@ -12,7 +12,7 @@
             <img src="/public/contoh2.png" alt="website type" style="width:9em;">
         </div>
     </div>
-<div class="row">
+<div class="row" style="height:50em;">
     <div class="column left2">
         <div class="signupbox">
             <h1 style="text-align:center;">Welcome to OPnion</h1>
@@ -116,6 +116,7 @@
 <div class = "loginbox" style="height:7em;padding:3em;padding-top:2em;text-align:center;background-color:#283061;">
 Copyright OPnion. All rights reserved   <br> 
 @2021 Online Generated Content Web Forum System
+<a href="/adminModule/admin.php" style="color:white;">Admin</a>
 </div>
 
 </body>

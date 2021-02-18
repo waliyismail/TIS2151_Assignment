@@ -34,7 +34,7 @@
     <div class="column left3">
     <h2>Create Forum</h2>
     <div class="boxborder">
-        <form action="adminMain.php" method="post">
+        <form action="createForum.php" method="post">
 
                     <label for="forumid"><b>Forum Title</b></label><br>
                     <input style="width:30em;" type="text" placeholder="Enter Forum Title" name="forum_name" required>

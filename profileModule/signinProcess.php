@@ -13,7 +13,7 @@ if(isset($_POST['save']))
         $_SESSION["USER_EMAIL"]=$row['USER_FORUM_EMAIL'];
         $_SESSION["USER_IMAGE"] = $row['USER_FORUM_IMAGE'];
         $_SESSION["ABOUT"] = $row['USER_FORUM_ABOUT'];
-        header("Location: profile.php"); 
+        header("Location: /feedModule/home.php"); 
     }
     else
     {

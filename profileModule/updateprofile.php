@@ -55,14 +55,7 @@
             </div>
         </form>
 
-        <form action="updateProfileProcess.php" method="post" enctype="multipart/form-data">
-            <div class="container">
-                    <input type="file" name="file" />
-                    <br>
-
-                    <input type="submit"style="width:13em;" value='Select Profile Picture' name = but_upload>
-            </div>
-        </form>
+        
     </div>
     <div class="column right3">
         <img src=         <?php 
