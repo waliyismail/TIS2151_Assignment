@@ -41,9 +41,14 @@
                 <input style="width:30em;" type="text" placeholder="Enter Username" name="user_name" >
                 <br>
 
-                <label for="email"><b>New Email</b></label><br>
-                <input style="width:30em;" type="email" placeholder="Enter Email" name="email" >
-                <br>
+                    <label for="username"><b>New Username</b></label><br>
+                    <input style="width:30em;" type="text" placeholder="Enter Username" name="username" >
+                    <br>
+
+                    <label for="email"><b>New Email</b></label><br>
+                    <input style="width:30em;" type="email" placeholder="Enter Email" name="email" >
+                    <br>
+
                     
                 
             </form>
@@ -51,8 +56,16 @@
                 <label for="about"><b>About</b></label><br>
                 <textarea name = "about" form = "form">About...</textarea>
             </div>
+        </form>
 
-        
+        <form action="updateProfileProcess.php" method="post" enctype="multipart/form-data">
+            <div class="container">
+                    <input type="file" name="file" />
+                    <br>
+
+                    <input type="submit"style="width:13em;" value='Select Profile Picture' name = but_upload>
+            </div>
+        </form>
     </div>
     <div class="column right3">
         <img src=         <?php 
