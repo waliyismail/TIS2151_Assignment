@@ -28,6 +28,17 @@
     return mysqli_fetch_all($result);
   }
 
+  function getMainPost()
+  {
+    include "../database.php";
+    $currentuserid = $_SESSION["ID"];
+
+    $getPosts = "SELECT * FROM POST WHERE FORUM_ID IN (SELECT FORUM_ID WHERE USER_FORUM_ID = '$currentuserid')";
+    $posts= mysqli_query($GLOBALS['conn'], $getPosts);
+
+    return $posts;
+  }
+
 
   // count comment from given post id
   function countComment($postid)

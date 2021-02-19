@@ -24,41 +24,71 @@
     </div>
 
 </div>
-<?php include "functions.php" ?>
+<?php
+  include "functions.php";
+  $posts = getMainPost();
+ ?>
 
 <div class="row">
     <div class="column left3">
     <h2>HOME FEED</h2>
-        <div class="boxborder" >
-            <p style="font-size: 14px;" >Title : Hari Malaysia | by : @HazwaniSalleh | Forum : Politic</p>
-            <p>
-                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan
-                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat.
-                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda
-                dengan saya?
-                </p>
-            <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
-            <p style="font-size: 14px;">2 Upvote | 2 Downvote </p>
-            <a href="comment.php"style="font-size: 14px;"> <button>3 comments</button></a>
-            <button>Upvote</button>
-            <button>Downvote</button>
-            <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div>
-        <div class="boxborder" >
-            <p style="font-size: 14px;" >Title : MERDEKA! | by : @AmirulIman | Forum : Politic</p>
-            <p>
-                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan
-                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat.
-                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda
-                dengan saya?
-                </p>
-            <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
-            <p style="font-size: 14px;">2 Upvote | 2 Downvote </p>
-            <a href="comment.php"style="font-size: 14px;"> <button>3 comments</button></a>
-            <button>Upvote</button>
-            <button>Downvote</button>
-            <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-        </div>
+        <!-- posting -->
+          <!-- loop all posts -->
+       
+        
+      <?php
+          if(mysqli_num_rows($posts) > 0) {
+            while ($post = mysqli_fetch_array($posts)) {
+                //  PUT IN VALUE OF UPVOTE DOWNVOTE
+                $post_title = $post["POST_TITLE"];
+                $post_content = $post["POST_CONTENT"];
+                $post_image = $post["POST_IMAGE"];
+                $userid = $post["USER_FORUM_ID"];
+                $postid= $post["POST_ID"];
+                $forumid= $post["FORUM_ID"];
+                $postUpvote = $post["POST_UPVOTE_COUNT"];
+                $postDo+nVote = $post["POST_DOWNVOTE_COUNT"];
+                $comment_count = countComment($postid);
+               ?>
+             <div class="boxborder" >
+              <p style="font-size: 14px;" >Forum : <?php        
+                include 'database.php';
+                $id = $_SESSION['ID'] ;
+
+                $sql = "SELECT FORUM_NAME FROM FORUM WHERE FORUM_ID = '$forumid'"; 
+
+                $result = mysqli_query($conn,$sql);
+        
+            while($row = mysqli_fetch_assoc($result)) {
+ 
+                echo $row["FORUM_NAME"];
+        } 
+         ?></p>
+              <p style="font-size: 14px;" >Title : <?php echo $post_title ?> | by : @<?php echo $userid ?></p>
+              <p style="font-size: 14px;" >Upvote : <?php echo $postUpvote ?> | Downvote : @<?php echo $postDownVote ?></p>
+              <p><?php echo $post_content ?></p>
+              <?php if (isset($post_image)){ ?>
+              <img src="post_images/<?php echo $post_image ?>" alt="" style="width:50%;">
+            <?php } ?>
+              <br>
+              <a href="comment.php?forumid=<?php echo $forum["FORUM_ID"]; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"> <button><?php echo $comment_count ?> comments</button></a>
+              <form action="upvoteProcess.php" method="post">
+                <input type="hidden" name="action" value="<?php echo $postid ?>" />
+                <input id="Upvote-Submit" type="Submit" name="submit" value="Upvote">
+                <input id="Downvote-Submit" type="Submit" name="submit" value="Downvote">
+              </form>
+              <?php if($GLOBALS["currentuserid"] === $userid){?>
+              <!-- ability to delete post -->
+              <form class="" action="#" method="post">
+                <input type="hidden" name="post_id" value="<?php echo $post["POST_ID"]; ?>">
+                <input type="hidden" name="forum_id" value="<?php echo $post["FORUM_ID"]; ?>">
+                <input type="submit" name="delete_post" value="Delete Post">
+              </form>
+              <?php } ?>
+              <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
+              </div>
+        <?php }} ?>
+
         <br>
     </div>
 
