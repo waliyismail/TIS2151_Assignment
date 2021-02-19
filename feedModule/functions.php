@@ -33,7 +33,7 @@
     include "../database.php";
     $currentuserid = $_SESSION["ID"];
 
-    $getPosts = "SELECT * FROM POST  WHERE FORUM_ID IN (SELECT FORUM_ID WHERE USER_FORUM_ID = '$currentuserid') ORDER BY POST_UPVOTE_COUNT ";
+    $getPosts = "SELECT * FROM POST  WHERE FORUM_ID IN (SELECT FORUM_ID FROM SUBSCRIPTION WHERE USER_FORUM_ID = '$currentuserid') ORDER BY POST_UPVOTE_COUNT DESC ";
     $posts= mysqli_query($GLOBALS['conn'], $getPosts);
 
     return $posts;

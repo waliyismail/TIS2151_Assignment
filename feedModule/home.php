@@ -64,7 +64,7 @@
         } 
          ?></p>
               <p style="font-size: 14px;" >Title : <?php echo $post_title ?> | by : @<?php echo $userid ?></p>
-              <p style="font-size: 14px;" >Upvote : <?php echo $postUpvote ?> | Downvote : @<?php echo $postDownVote ?></p>
+              <p style="font-size: 14px;" >Upvote : <?php echo $postUpvote ?></p>
               <p><?php echo $post_content ?></p>
               <?php if (isset($post_image)){ ?>
               <img src="post_images/<?php echo $post_image ?>" alt="" style="width:50%;">
@@ -74,18 +74,19 @@
               <form action="upvoteProcess.php" method="post">
                 <input type="hidden" name="action" value="<?php echo $postid ?>" />
                 <input id="Upvote-Submit" type="Submit" name="submit" value="Upvote">
-                <input id="Downvote-Submit" type="Submit" name="submit" value="Downvote">
+               
               </form>
               <?php if($GLOBALS["currentuserid"] === $userid){?>
               <!-- ability to delete post -->
-              <form class="" action="#" method="post">
-                <input type="hidden" name="post_id" value="<?php echo $post["POST_ID"]; ?>">
-                <input type="hidden" name="forum_id" value="<?php echo $post["FORUM_ID"]; ?>">
-                <input type="submit" name="delete_post" value="Delete Post">
-              </form>
+              
               <?php } ?>
-              <a href="#"style="font-size: 14px;float:right;"> <button>Report this post</button></a>
-              </div>
+              <form class="report" action="reportProcess.php" method="post">
+                <!-- pass in post id and reporter id  -->
+                <input type="hidden" name="post_id" value="<?php echo $post["POST_ID"]; ?>"/>
+                <input type="hidden" name="reporter_id" value="<?php echo $currentuserid; ?>"/>
+                <input type="hidden" name="report_type" value="report_post"/>
+                <button type="submit" name="reported" style="font-size: 14px;float:right;">Report Post</button>
+              </form>              </div>
         <?php }} ?>
 
         <br>

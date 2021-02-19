@@ -51,13 +51,15 @@
     <div class="column right3">
        <h3 style="text-align:center;">Subscribed Forum</h3>
         <ul class="ulprof">
-            <li class="liprof"><a href="forum.php">Politic</a></li>
-            <li class="liprof"><a href="forum.php">Hardware</a></li>
+            <?php include "../feedModule/forumSubscribed.php"?>
+
+            
 
         </ul>
 <hr>
         <h3 style="text-align:center;">List of All Forum</h3>
         <?php include "../feedModule/forumList.php" ?>
+
     </div>
 </div>
 

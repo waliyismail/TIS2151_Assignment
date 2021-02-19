@@ -49,7 +49,7 @@
               <p style="font-size: 14px;" >Upvote : <?php echo $postUpvote ?> | Downvote : @<?php echo $postDownVote ?></p>
               <p><?php echo $post_content ?></p>
               <?php if (isset($post_image)){ ?>
-              <img src="post_images/<?php echo $post_image ?>" alt="" style="width:50%;">
+              <img src="../feedModule/post_images/<?php echo $post_image ?>" alt="" style="width:50%;">
             <?php } ?>
               <br>
               <a href="comment.php?forumid=<?php echo $forum["FORUM_ID"]; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"></a>

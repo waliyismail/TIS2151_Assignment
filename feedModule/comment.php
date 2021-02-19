@@ -42,8 +42,8 @@
               <p><?php echo $post["POST_CONTENT"]; ?></p>
               <?php if(is_null($post['POST_IMAGE'])) {?>
                 <img src="post_images/<?php echo $post["POST_IMAGE"]; ?>" alt="post image" style="width:50%;"><br> <?php } ?>
-              <button>Upvote</button>
-              <button>Downvote</button>
+
+            
               <!-- if post author this button shows up -->
               <?php if($GLOBALS["currentuserid"] === $post["USER_FORUM_ID"]){?>
               <!-- ability to delete post -->
@@ -101,16 +101,18 @@
         <br>
       </div>
 
-    <div class="column right3">
+      <div class="column right3">
        <h3 style="text-align:center;">Subscribed Forum</h3>
         <ul class="ulprof">
-            <li class="liprof"><a href="forum.php">Politic</a></li>
-            <li class="liprof"><a href="forum.php">Hardware</a></li>
+            <?php include "forumSubscribed.php"?>
+
+            
 
         </ul>
-        <hr>
+<hr>
         <h3 style="text-align:center;">List of All Forum</h3>
-        <?php include "../feedModule/forumList.php" ?>
+        <?php include "forumList.php" ?>
+
     </div>
   </div>
 
