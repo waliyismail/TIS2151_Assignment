@@ -34,6 +34,10 @@
     <h2>FORUM NAME : <?php echo $forum['FORUM_NAME'] ?></h2>
     <h3>About : <?php echo $forum['FORUM_ABOUT'] ?></h3>
         <!-- create post -->
+        <form action="subscribeProcess.php" method="post">
+                <input type="hidden" name="action" value="<?php echo $forum['FORUM_ID']?>" />  
+                <input id="Submit" type="Submit" name="submit" value="Subscibe">
+            </form>
         <div style="background-color: rgb(220, 237, 255);padding-left:2em;padding-right:4em;border: 3px solid #ccc;padding:1em;margin:2em;margin-right:4em;">
             <img src="/public/postsymbol.png" alt="post" style="width:3em;">
             <a href="/discussionModule/createPost.php?forumid=<?php echo $forum['FORUM_ID'];?>" ><input style="float:right;" type="text" placeholder="Create Post" name="create" required></a>
@@ -49,13 +53,13 @@
                 $post_image = $post["POST_IMAGE"];
                 $userid = $post["USER_FORUM_ID"];
                 $postid= $post["POST_ID"];
-                $postValue = $post["POST_VALUE"];
                 $postUpvote = $post["POST_UPVOTE_COUNT"];
                 $postDownVote = $post["POST_DOWNVOTE_COUNT"];
                 $comment_count = countComment($postid);
                ?>
              <div class="boxborder" >
               <p style="font-size: 14px;" >Title : <?php echo $post_title ?> | by : @<?php echo $userid ?></p>
+              <p style="font-size: 14px;" >Upvote : <?php echo $postUpvote ?> | Downvote : @<?php echo $postDownVote ?></p>
               <p><?php echo $post_content ?></p>
               <?php if (isset($post_image)){ ?>
               <img src="post_images/<?php echo $post_image ?>" alt="" style="width:50%;">
@@ -86,8 +90,9 @@
     <div class="column right3">
        <h3 style="text-align:center;">Subscribed Forum</h3>
         <ul class="ulprof">
-            <li class="liprof"><a href="#">Politic</a></li>
-            <li class="liprof"><a href="#">Hardware</a></li>
+            <?php include "forumSubscribed.php"?>
+
+            
 
         </ul>
 <hr>

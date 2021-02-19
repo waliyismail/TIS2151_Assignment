@@ -1,6 +1,6 @@
 <?php
-  include "forumBackend.php";
-  include "../database.php";
+  
+  include ("database.php");
   include ("../profileModule/signinProcess.php");
   extract($_POST);
 
@@ -10,13 +10,17 @@
     if($submit == "Upvote")
     {
     $var = 1;
-    $query = "INSERT INTO POST_UPVOTE_DOWNVOTE(USER_FORUM_ID, POST_ID,UPVOTE_STATUS) VALUES ('$id', '$action','$var')";
+    $query = "INSERT INTO POST_UPVOTE_DOWNVOTE(USER_FORUM_ID,POST_ID,UPVOTE_STATUS) VALUES ('$id','$action','$var')";
     echo $id ;
     echo $action ;
-    echo $submit;
-    $sql=mysqli_query($conn,$query)or header('Location: ' . $_SERVER['HTTP_REFERER']);
+    echo $var;
+    if (!mysqli_query($conn,$query)) {
+        echo("Error description: " . mysqli_error($conn));
+      }
+
+    $sql=mysqli_query($conn,$query) or header('Location: ' . $_SERVER['HTTP_REFERER']);;
     header('Location: ' . $_SERVER['HTTP_REFERER']);
-}
+    }
 
     if($submit == "Downvote")
     {
@@ -25,6 +29,9 @@
     echo $id ;
     echo $action ;
     echo $submit;
+    if (!mysqli_query($conn,$query)) {
+        echo("Error description: " . mysqli_error($con));
+      }
     $sql=mysqli_query($conn,$query)or header('Location: ' . $_SERVER['HTTP_REFERER']);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }

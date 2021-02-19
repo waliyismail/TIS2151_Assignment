@@ -7,8 +7,20 @@
   };
 
   // get list of all forum in the database;
+  function getForumListSubscibed()
+  {
+    include "../database.php";
+    $currentuserid = $_SESSION["ID"];
+    $sql = "SELECT forum_id, FORUM_NAME FROM FORUM WHERE FORUM_ID IN (SELECT FORUM_ID FROM SUBSCRIPTION WHERE USER_FORUM_ID = '$currentuserid')";
+    $result = mysqli_query($GLOBALS['conn'], $sql);
+    if(!$result) {echo mysqli_error($conn);}
+
+    return mysqli_fetch_all($result);
+  }
+
   function getForumList()
   {
+    include "../database.php";
     $sql = "SELECT forum_id, FORUM_NAME FROM FORUM";
     $result = mysqli_query($GLOBALS['conn'], $sql);
     if(!$result) {echo mysqli_error($conn);}
@@ -16,9 +28,11 @@
     return mysqli_fetch_all($result);
   }
 
+
   // count comment from given post id
   function countComment($postid)
   {
+    include "../database.php";
     $sql = "SELECT * FROM COMMENT where POST_ID=$postid";
     $result = mysqli_query($GLOBALS['conn'], $sql);
     if(!$result) {echo mysqli_error($conn);}

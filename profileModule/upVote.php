@@ -47,7 +47,6 @@
         }
         $id = $_SESSION['ID'] ;
 
-
         $sql = "SELECT * FROM POST WHERE POST_ID IN (SELECT POST_ID FROM POST_UPVOTE_DOWNVOTE WHERE USER_FORUM_ID = '$id' AND UPVOTE_STATUS = 1 GROUP BY POST_ID)"; 
 
         $result = mysqli_query($conn,$sql);
@@ -59,14 +58,14 @@
                 $post_image = $post["POST_IMAGE"];
                 $userid = $post["USER_FORUM_ID"];
                 $postid= $post["POST_ID"];
-                // $postValue = $post["POST_VALUE"];
                 $postUpvote = $post["POST_UPVOTE_COUNT"];
                 $postForumID = $post["FORUM_ID"];
-                // $postDownVote = $post["POST_DOWNVOTE_COUNT"];
+                $postDownVote = $post["POST_DOWNVOTE_COUNT"];
                 $comment_count = countComment($postid);
                ?>
              <div class="boxborder" >
               <p style="font-size: 14px;" >Title : <?php echo $post_title ?> | by : @<?php echo $userid ?></p>
+              <p style="font-size: 14px;" >Upvote : <?php echo $postUpvote ?> | Downvote : @<?php echo $postDownVote ?></p>
               <p><?php echo $post_content ?></p>
               <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
               <a href="../feedModule/comment.php?forumid=<?php echo $postForumID; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"> <button><?php echo $comment_count ?> comments</button></a>

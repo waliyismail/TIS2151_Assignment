@@ -190,7 +190,7 @@
             <li class="liprof"><a href="updateprofile.php">Update Profile</a></li>
             <li class="liprof"><a href="updatePic.php">Edit Picture</a></li>
             <li class="liprof"><a href="viewPost.php">Post</a></li>
-            <li class="liprof"><a href="viewPost.php">Upvote</a></li>
+            <li class="liprof"><a href="upVote.php">Upvote</a></li>
         </ul>
         
     </div>
