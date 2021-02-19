@@ -39,7 +39,6 @@
       <?php
           if(mysqli_num_rows($posts) > 0) {
             while ($post = mysqli_fetch_array($posts)) {
-                //  PUT IN VALUE OF UPVOTE DOWNVOTE
                 $post_title = $post["POST_TITLE"];
                 $post_content = $post["POST_CONTENT"];
                 $post_image = $post["POST_IMAGE"];
@@ -47,7 +46,7 @@
                 $postid= $post["POST_ID"];
                 $forumid= $post["FORUM_ID"];
                 $postUpvote = $post["POST_UPVOTE_COUNT"];
-                $postDo+nVote = $post["POST_DOWNVOTE_COUNT"];
+                $postDownVote = $post["POST_DOWNVOTE_COUNT"];
                 $comment_count = countComment($postid);
                ?>
              <div class="boxborder" >
@@ -71,7 +70,7 @@
               <img src="post_images/<?php echo $post_image ?>" alt="" style="width:50%;">
             <?php } ?>
               <br>
-              <a href="comment.php?forumid=<?php echo $forum["FORUM_ID"]; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"> <button><?php echo $comment_count ?> comments</button></a>
+              <a href="comment.php?forumid=<?php echo $forumid; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"> <button><?php echo $comment_count ?> comments</button></a>
               <form action="upvoteProcess.php" method="post">
                 <input type="hidden" name="action" value="<?php echo $postid ?>" />
                 <input id="Upvote-Submit" type="Submit" name="submit" value="Upvote">
