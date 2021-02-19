@@ -25,66 +25,51 @@
 </div>
 
 <?php include "adminfunc.php";
-  $userReports = getReports();
+  $posts = getReports();
+  
  ?>
 <div class="row">
     <div class="column left3">
     <h2>User Report</h2>
 
     <?php
-    if(mysqli_num_rows($userReports) > 0) {
+          if(mysqli_num_rows($posts) > 0) {
+            while ($post = mysqli_fetch_array($posts)) {
+                //  PUT IN VALUE OF UPVOTE DOWNVOTE
+                $post_title = $post["POST_TITLE"];
+                $post_content = $post["POST_CONTENT"];
+                $post_image = $post["POST_IMAGE"];
+                $userid = $post["USER_FORUM_ID"];
+                $postid= $post["POST_ID"];
+                $postUpvote = $post["POST_UPVOTE_COUNT"];
+                $postDownVote = $post["POST_DOWNVOTE_COUNT"];
+               ?>
+             <div class="boxborder" >
+              <p style="font-size: 14px;" >Title : <?php echo $post_title ?> | by : @<?php echo $userid ?></p>
+              <p style="font-size: 14px;" >Upvote : <?php echo $postUpvote ?> | Downvote : @<?php echo $postDownVote ?></p>
+              <p><?php echo $post_content ?></p>
+              <?php if (isset($post_image)){ ?>
+              <img src="post_images/<?php echo $post_image ?>" alt="" style="width:50%;">
+            <?php } ?>
+              <br>
+              <a href="comment.php?forumid=<?php echo $forum["FORUM_ID"]; ?>&postid=<?php echo $postid ?>" style="font-size: 14px;"></a>
 
-       while ($report = mysqli_fetch_array($userReports)) {
-         $report_id = $report['USER_FORUM_REPORT_ID'];
-         $report_content = $report['USER_FORUM_REPORT_CONTENT'];
-         $post_id = $report['POST_ID'];
-         $reporter_id = $report['USER_FORUM_ID'];
-         $reported_post = getPostDetails($post_id);
-         ?>
-         <div class="boxborder" >
-             REPORTED BY : @<?php echo $report_id ?> <br>
-             FORUM : POLITICS<br>
-             REPORT DETAILS : <?php if(is_null($report_content)) { echo "N/A"; }else { echo $report_content; }?><br>
-             <hr>
-                 <p style="font-size: 14px;" >Title : <?php echo $post['POST_TITLE'] ?> | by : @<?php echo $post['USER_FORUM_ID'] ?></p>
-                 <p><?php echo $post['POST_CONTENT'] ?>                     </p>
-                 <?php if(is_null($post['POST_IMAGE'])) {?>
-                   <img src="post_images/<?php echo $post["POST_IMAGE"]; ?>" alt="post image" style="width:50%;"><br> <?php } ?>
-                 <button class="button"type="submit"style="width:13em;">DELETE</button>
-         </div>
-             <br>
-      <?php  } ?>
+              
+              <!-- ability to delete post -->
+              <form class="" action="deletePostAdmin.php" method="post">
+                <input type="hidden" name="post_id" value="<?php echo $post["POST_ID"]; ?>">
+                <input type="hidden" name="forum_id" value="<?php echo $post["FORUM_ID"]; ?>">
+                <input type="submit" name="delete_post" value="Delete Post">
+              </form>
+         
+              </div>
+        <?php }} ?>
 
-    <?php } else
-     {
-       echo "no reports..";
-     }?>
 
-    <div class="boxborder" >
-        REPORTED BY : @AmirulIman <br>
-        FORUM : POLITICS<br>
-        TYPE : POSTING<br>
-        <hr>
-            <p style="font-size: 14px;" >Title : Hari Malaysia | by : @WaliyIsmail</p>
-            <p>
-                31 Ogos 1957 tanggal Kemerdekaan Malaysia!! Marilah kita meraikan
-                nya dengan sebaik mungkin. Kibarkan Bendera Malaysia di semua tempat.
-                Tak kira di mana anda berada. Di rumah atau di luar sekalipun. Setuju kah anda
-                dengan saya?
-                </p>
-            <img src="/public/merdeka1.jpg" alt="Website name" style="width:50%;"><br>
-            <button class="button"type="submit"style="width:13em;">DELETE</button>
-        </div>
+
+
         <br>
-        <div class="boxborder">
-            Reported by :
 
-        </div>
-        <br>
-        <div class="boxborder">
-            Reported by :
-
-        </div>
         <br>
     </div>
     <div class="column right3">

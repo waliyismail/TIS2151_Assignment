@@ -53,7 +53,7 @@
                 <input type="submit" name="delete_post" value="Delete Post">
               </form>
               <?php } ?>
-              <form class="report" action="report.php" method="post">
+              <form class="report" action="reportProcess.php" method="post">
                 <!-- pass in post id and reporter id  -->
                 <input type="hidden" name="post_id" value="<?php echo $post["POST_ID"]; ?>"/>
                 <input type="hidden" name="reporter_id" value="<?php echo $currentuserid; ?>"/>
@@ -90,14 +90,7 @@
                             <input type="submit" name="delete_comment" value="Delete Comment">
                           </form>
                         <?php } ?>
-                        <form class="report" action="report.php" method="post">
-                          <!-- pass in comment id and reporter id  -->
-                          <input type="hidden" name="post_id" value="<?php echo $row["COMMENT_ID"]; ?>"/>
-                          <input type="hidden" name="reporter_id" value="<?php echo $GLOBALS['currentuserid']; ?>"/>
-                          <input type="hidden" name="report_type" value="report_comment"/>
-                          <button type="submit" name="reported" style="font-size: 14px;float:right;">Report Comment</button>
-                          <!-- if user is the commment author, can delete -->
-                        </form>
+
 
 
                     </div>

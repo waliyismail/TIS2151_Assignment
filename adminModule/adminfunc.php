@@ -8,11 +8,11 @@
   //get all Reports
   function getReports()
   {
-    $sql = "SELECT * FROM USER_FORUM_REPORT";
+    $sql = "SELECT * FROM POST WHERE POST_ID IN (SELECT POST_ID FROM USER_FORUM_REPORT)";
     $result = mysqli_query($GLOBALS['conn'], $sql);
     if(!$result) {echo mysqli_error($GLOBALS['conn']);}
 
-    return $reports;
+    return $result;
   }  // get list of all forum in the database;
 
   function getPostDetails($postid)
@@ -22,3 +22,4 @@
     return $post;
   }
  ?>
+   
